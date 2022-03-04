@@ -1,0 +1,58 @@
+F:\Le design\Le design\bin\Debug\Le design.exe.config
+F:\Le design\Le design\bin\Debug\Le design.exe
+F:\Le design\Le design\bin\Debug\Le design.pdb
+F:\Le design\Le design\obj\Debug\Le design.csprojAssemblyReference.cache
+F:\Le design\Le design\obj\Debug\MainWindow.g.cs
+F:\Le design\Le design\obj\Debug\App.g.cs
+F:\Le design\Le design\obj\Debug\Le design_MarkupCompile.cache
+F:\Le design\Le design\obj\Debug\Le design_MarkupCompile.lref
+F:\Le design\Le design\obj\Debug\MainWindow.baml
+F:\Le design\Le design\obj\Debug\Le design.g.resources
+F:\Le design\Le design\obj\Debug\Le_design.Properties.Resources.resources
+F:\Le design\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
+F:\Le design\Le design\obj\Debug\Le design.exe
+F:\Le design\Le design\obj\Debug\Le design.pdb
+E:\Le design\Le design\bin\Debug\Le design.exe.config
+E:\Le design\Le design\bin\Debug\Le design.exe
+E:\Le design\Le design\bin\Debug\Le design.pdb
+E:\Le design\Le design\obj\Debug\Le design.csproj.AssemblyReference.cache
+E:\Le design\Le design\obj\Debug\MainWindow.g.cs
+E:\Le design\Le design\obj\Debug\App.g.cs
+E:\Le design\Le design\obj\Debug\Le design_MarkupCompile.cache
+E:\Le design\Le design\obj\Debug\Le design_MarkupCompile.lref
+E:\Le design\Le design\obj\Debug\MainWindow.baml
+E:\Le design\Le design\obj\Debug\Le design.g.resources
+E:\Le design\Le design\obj\Debug\Le_design.Properties.Resources.resources
+E:\Le design\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
+E:\Le design\Le design\obj\Debug\Le design.csproj.CoreCompileInputs.cache
+E:\Le design\Le design\obj\Debug\Le design.exe
+E:\Le design\Le design\obj\Debug\Le design.pdb
+F:\C#\Le design en xaml\Le design\bin\Debug\Le design.exe.config
+F:\C#\Le design en xaml\Le design\bin\Debug\Le design.exe
+F:\C#\Le design en xaml\Le design\bin\Debug\Le design.pdb
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design.csprojAssemblyReference.cache
+F:\C#\Le design en xaml\Le design\obj\Debug\MainWindow.g.cs
+F:\C#\Le design en xaml\Le design\obj\Debug\App.g.cs
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design_MarkupCompile.cache
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design_MarkupCompile.lref
+F:\C#\Le design en xaml\Le design\obj\Debug\MainWindow.baml
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design.g.resources
+F:\C#\Le design en xaml\Le design\obj\Debug\Le_design.Properties.Resources.resources
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design.exe
+F:\C#\Le design en xaml\Le design\obj\Debug\Le design.pdb
+E:\C#\Le design en xaml\Le design\bin\Debug\Le design.exe.config
+E:\C#\Le design en xaml\Le design\bin\Debug\Le design.exe
+E:\C#\Le design en xaml\Le design\bin\Debug\Le design.pdb
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.csproj.AssemblyReference.cache
+E:\C#\Le design en xaml\Le design\obj\Debug\MainWindow.g.cs
+E:\C#\Le design en xaml\Le design\obj\Debug\App.g.cs
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design_MarkupCompile.cache
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design_MarkupCompile.lref
+E:\C#\Le design en xaml\Le design\obj\Debug\MainWindow.baml
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.g.resources
+E:\C#\Le design en xaml\Le design\obj\Debug\Le_design.Properties.Resources.resources
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.csproj.CoreCompileInputs.cache
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.exe
+E:\C#\Le design en xaml\Le design\obj\Debug\Le design.pdb
