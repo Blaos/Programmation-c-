@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Application_SFL1"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="900" AllowsTransparency="True" WindowStyle="None"
+        Title="Window1" Height="auto" Width="auto" AllowsTransparency="True" WindowStyle="None"
         Background="#0B2546" WindowStartupLocation="CenterScreen">
     <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
                                    enfin d'obtenir la couleur souhaité -->
@@ -69,22 +69,7 @@
                                                            où j'ai insérer un fichier qui contient style d'écriture défini par google trouvé sur internet ( ce fichier se nomme Dosis,style Dosis...)
                                                          - Le poid de l'écriture = la taille de l'écriture -->
             </Button>
-            <TextBlock Text="Instantané"
-                       Foreground="LightGray"
-                       Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
             <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
-
-            <TextBlock Text="Créer"
-                       Foreground="LightGray"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
             <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
 
             <TextBlock Text="Charger"
@@ -248,9 +233,9 @@
                     Grid.Column="3" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" 
-                    Width="64" 
-                    Height="25"
-                    Click="Button_Création">
+                    Width="auto" 
+                    Height="auto"
+                    Click="Button_Création" Margin="0.2,0,0,-0.2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#081527"/>
@@ -258,14 +243,15 @@
                     </Style>
                 </Button.Style>
             </Button>
+            
             <Button Content="Instantané"
                     Foreground="LightGray"
                     Grid.Column="2" 
                     HorizontalAlignment="Left" 
                     VerticalAlignment="Top" 
-                    Width="65" 
+                    Width="auto" 
                     Height="25"
-                    Click="Button_Instantane">
+                    Click="Button_Instantane" Margin="0,0,0,-0.2" Grid.ColumnSpan="2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#081527"/>
@@ -275,61 +261,7 @@
             </Button>
 
         </Grid>
-
-
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,312,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,350,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,389,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="TextBlock"/></TextBlock>
-
-        <TextBlock HorizontalAlignment="Left"
-                   Foreground="White" 
-                   Grid.Row="1" 
-                   FontSize="24"
-                   TextWrapping="Wrap" 
-                   Text="Le mode instantané" 
-                   VerticalAlignment="Top" 
-                   Height="37" 
-                   Width="218"/>
-
-
-        <Border
-                            Background="#00A3FF"
-                            Margin="-22,156,184,119"
-                            Grid.ColumnSpan="2" Grid.Row="1" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="20"/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-
-        <Border
-                            Background="#FFFFFF"
-                            Margin="-95,168,-63,95"
-                            CornerRadius="20" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.Row="1">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="20"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Border
-                            Background="#FFFFFF"
-                            Margin="-8,305,414,-88"
-                            Grid.Row="1" Grid.ColumnSpan="2" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="0.99999999999999989" ScaleX="0.99999999999999989"/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="20"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
 
 
     </Grid>
