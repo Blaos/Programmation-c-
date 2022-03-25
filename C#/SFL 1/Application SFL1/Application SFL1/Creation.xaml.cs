@@ -54,11 +54,6 @@ namespace Application_SFL1
             this.Close();
         }
 
-        private void Button_Close(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
         private void Button_Reduit_Ecran(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -69,5 +64,19 @@ namespace Application_SFL1
             this.WindowState = WindowState.Maximized;
         }
 
+        private void Button_Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Button_Fenetre_Reduit(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Button_Ecran_Plein(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
     }
 }

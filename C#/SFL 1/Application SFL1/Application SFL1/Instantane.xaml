@@ -47,6 +47,16 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <TextBlock       
+                
+                       Foreground="LightGray"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"      
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis" 
+                       FontWeight="Medium" Margin="9,5,8,5" Grid.RowSpan="2"><Run Text="SFL 1"/></TextBlock>
+
+
             <Button Click="Button_Accueil"
                     Grid.Column="1">
                 <Button.Style>
@@ -276,61 +286,282 @@
 
         </Grid>
 
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Stretch"
+                    Margin="-250,5,7,10" Grid.Column="1" Cursor="Hand">
+            <!-- va permettre de segmenter en petit bout la fenetre pour me permettre d'aller dans les détails, écritue image... une grille quoi -->
 
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,312,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,350,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,389,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="TextBlock"/></TextBlock>
+            <StackPanel>
 
-        <TextBlock HorizontalAlignment="Left"
-                   Foreground="White" 
-                   Grid.Row="1" 
-                   FontSize="24"
-                   TextWrapping="Wrap" 
-                   Text="Le mode instantané" 
-                   VerticalAlignment="Top" 
-                   Height="37" 
-                   Width="218"/>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,50,0,20">
+
+                    <Image Width="50" Height="50"
+                       Source="Images/éolienne.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Margin="0,-15,0,0"/>
+
+                    <TextBlock  Text="Éolienne" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                               Margin="10,-15,0,0"
+                               VerticalAlignment="Center"/>
 
 
-        <Border
+                    <!-- Dans le StackPanel j'introduis une "image",BitmapScalingMode c'est la résolution de l'image, plusieur option possible hight résolution = baisse perf -->
+                    <!-- Dans le Stack Panel je vais écrire avec des paramètres de style sur l'écriture -->
+                </StackPanel>
+                <TextBlock Text="Mode Instantané :" 
+                           Foreground="White"
+                           FontSize="25"
+                           FontWeight="Medium"                  
+                           FontFamily="Fonts/#Dosis" 
+                           Margin="10,0,0,0"/>
+
+                <TextBlock Text="Le mode instantané, permet de commander la soufflerie en direct." 
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="10,5,0,0"/>
+
+
+                <!-- Permet que l'écriture s'aligne tout seul (à la ligne) -->
+
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,45,0,0">
+
+                <Image Width="55" Height="60"
+                       Source="Images/Wind.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                       Margin="-5,35,-28,0"/>
+
+                <Image Width="40" Height="40"
+                       Source="Images/Power.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                       Margin="-25,113,-28,0"/>
+
+                <Image Width="30" Height="30"
+                       Source="Images/Time.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                       Margin="-13,182,20,0"/>
+
+                <TextBlock Text="Force du vent :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                               Margin="-10,110,0,0"
+                               VerticalAlignment="Top"/>
+
+                <TextBlock Text="Energie :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           Margin="-170,150,0,0"
+                           VerticalAlignment="Top" Width="96"/>
+
+                <TextBlock Text="Temps :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                               Margin="-170,185,0,0"
+                               VerticalAlignment="Top" Width="96"/>
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="268,-474,-718,207">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="313*"/>
+                <ColumnDefinition Width="453*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="121*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RenderTransform>
+                <RotateTransform Angle="90"/>
+                <!-- permet de déterminer l'angle du grid-->
+            </Grid.RenderTransform>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="-251,358,-354,-358"
+                        Panel.ZIndex="-1" Grid.ColumnSpan="5">
+                <StackPanel Width="1176">
+
+                    <Border Width="600"
+                            Height="35"
+                            Background="#FFFFFF"
+                            Margin="900,190,0,0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700"
+                            Height="35"
                             Background="#00A3FF"
-                            Margin="-22,156,184,119"
-                            Grid.ColumnSpan="2" Grid.Row="1" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <RotateTransform Angle="20"/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-
-        <Border
+                            Margin="800,15,0,0"
+                            CornerRadius="20"/>
+                    <Border
+                            Height="35"
                             Background="#FFFFFF"
-                            Margin="-95,168,-63,95"
-                            CornerRadius="20" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Grid.Row="1">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="20"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Border
-                            Background="#FFFFFF"
-                            Margin="-8,305,414,-88"
-                            Grid.Row="1" Grid.ColumnSpan="2" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="0.99999999999999989" ScaleX="0.99999999999999989"/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="20"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
+                            Margin="865,15,-26,0"
+                            CornerRadius="20"/>
 
+
+                </StackPanel>
+
+            </StackPanel>
+            <TextBlock Margin="414,454,19,243"
+                       Foreground="AliceBlue" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform><Run Text="%"/><Run Text=" "/></TextBlock>
+            <TextBlock Text="Veuillez indiquer la puissance de la soufflerie :" Margin="203,304,4,387" RenderTransformOrigin="0.5,0.5" Foreground="White"  FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                       FontSize="18"
+                       TextDecorations="Underline" Grid.Column="1" Grid.ColumnSpan="4">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                 TextAlignment="Left"
+                 Foreground="White"
+                 Height="23"       
+                 Background="#0B2546"
+                 TextWrapping="Wrap"            
+                 TextChanged="TextBox_TextChanged"
+                 Name="valeur_slider" RenderTransformOrigin="0.5,0.5"
+                 Margin="409,480,14,214" Grid.Column="1">
+
+                <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Slider Name="slValue"
+                    Height="26" 
+                    Margin="317,350,-16,341"
+                    RenderTransformOrigin="0.5,0.5" 
+                    ValueChanged="Slider_ValueChanged"
+                    TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
+                    Maximum="100" Grid.Column="1" Grid.ColumnSpan="4">
+                <Slider.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Slider.RenderTransform>
+                <!-- Le maximun est le maximun où la barre peut avoir comme paramètre // Le TickPlacement c'est le placement de petit tiré // le tickFrequency c'est la fréquence de tiré // IsSnapToTickEnabled permet de bloquer au frequence défini-->
+            </Slider>
+
+            <Rectangle HorizontalAlignment="Left" Height="259" Margin="0,-181,-24,0" Stroke="#FF0A2951" VerticalAlignment="Top" Width="158" Fill="#FF0A2951" Grid.Column="3" Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="L'arrêt d'urgence permet de stopper la soufflerie, la puissance sera remise à zéro."
+                Margin="424,-25,-2,703" RenderTransformOrigin="0.5,0.5" Foreground="White"  FontWeight="Medium"
+                FontFamily="Fonts/#Dosis"
+                TextWrapping="Wrap"
+                FontSize="10" Grid.Column="1" Grid.ColumnSpan="4">
+                <TextBlock.RenderTransform>                
+                       <RotateTransform Angle="-90"/>                    
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Image Source="Images/Urgence.png" 
+                       Margin="118,-256,-41,938" RenderTransformOrigin="0.499,3.182" Grid.Column="4">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="-90"/>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button     Content="Arrêt"
+                        Click="Button_Arret"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Margin="69,-28,-6,686"  Grid.Column="4" Background="#FF383535" >
+                <Button.RenderTransform>
+                    <RotateTransform Angle="-90"/>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#FF636363"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#FFB0B0B0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="50" Height="50"
+                                    CornerRadius="50"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBlock Text="Arrêt d'urgence :" Margin="388,-17,42,708" RenderTransformOrigin="0.5,0.5" Foreground="White"  FontWeight="Medium"
+                FontFamily="Fonts/#Dosis"
+                TextWrapping="Wrap"
+                FontSize="18" Grid.Column="1" Grid.ColumnSpan="4"
+                       TextDecorations="Underline">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+
+            <!-- ici rien de compliqué je vais simplement faire un text box + slide avec quelque option pour définir mes besoin comme pouvoir voir la puissance de la barre ...-->
+
+        </Grid>
+
+
+        <Label Content="Label" HorizontalAlignment="Left" Margin="433,314,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="433,354,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="433,389,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
 
     </Grid>
 

@@ -56,6 +56,11 @@ namespace Application_SFL1
             this.WindowState = WindowState.Maximized;
         }
 
+        private void Button_Arret(object sender, RoutedEventArgs e)
+        {
+            valeur_slider.Text = "0";
+        }
+
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique chose reste enfoncé la fenetre bouge avec le curseur
@@ -66,10 +71,10 @@ namespace Application_SFL1
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
-         //   EnvoiTcpClient(); // l'évènement est l'appel de la  fonction EnvoiTcpClient 
+            EnvoiTcpClient(); // l'évènement est l'appel de la  fonction EnvoiTcpClient 
         }
 
-     /*   public void EnvoiTcpClient()
+        public void EnvoiTcpClient()
         {
             string message = slValue.Value.ToString(); // message contiendra l'information du TextBox et en plus on choisi seulement d'envoyer le texte contenu dans le text box grâce au ".text", sans ce dernier on envoie tout le contenu du text box.
             TcpClient client = new TcpClient(); // Création de l'objet client
@@ -81,12 +86,18 @@ namespace Application_SFL1
 
             stream.Write(data, 0, data.Length);
 
-            stream.Close(); // on ferme le tchat
+            stream.Close(); 
             client.Close(); // on ferme le client
 
-        }*/
+        } 
 
-   
+
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }
 
