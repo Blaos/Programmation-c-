@@ -60,7 +60,6 @@
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeserializeExtra.cs" />
     <Compile Include="Instantane.xaml.cs">
       <DependentUpon>Instantane.xaml</DependentUpon>
     </Compile>
