@@ -363,11 +363,12 @@
 
         </Grid>
 
-
-        <Grid Margin="10,61,-10,99.2" Grid.Row="1">
-           
+        <Grid Margin="0,111,0,84.2" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -381,14 +382,15 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-         
-
+            <TextBlock Text="Barre de puissance :" Grid.Column="2" Grid.ColumnSpan="4" VerticalAlignment="Bottom" FontSize="14" Foreground="White"></TextBlock>
         </Grid>
 
-        <Grid Margin="0,236,0,211.2" Grid.RowSpan="2">
+        <Grid Margin="0,175,0,20.2" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -402,44 +404,40 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="HALLO" Foreground="White" VerticalAlignment="Bottom" Grid.Column="1" Grid.ColumnSpan="2" />
+            <Rectangle 
+              Grid.ColumnSpan="14" Fill="#FF1B7089" RadiusX="25" RadiusY="25" Margin="7,10,0,0" Grid.Column="1"/>
 
-        </Grid>
-
-        <Grid Margin="10,173,10,10.2" Grid.Row="1" >
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
-                 TextAlignment="Left"
-                 Foreground="white"
-                 Background="#0B2546"                        
-                 TextChanged="TextBox_TextChanged"
-                 Name="valeur_slider"  BorderThickness="0" Grid.ColumnSpan="3" >
-                <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
-            </TextBox>
-
+            <TextBlock Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                       Grid.Column="2" 
+                       VerticalAlignment="Center">
+                   <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
+            </TextBlock>
             <Slider Name="slValue"
                     VerticalAlignment="Bottom"
                     ValueChanged="Slider_ValueChanged"
                     TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
-                    Maximum="100" Grid.Column="0" Grid.ColumnSpan="4"  Foreground="White">
+                    Maximum="100" Grid.Column="2" Grid.ColumnSpan="4"  Foreground="Black">
                 <!-- Le maximun est le maximun où la barre peut avoir comme paramètre // Le TickPlacement c'est le placement de petit tiré // le tickFrequency c'est la fréquence de tiré // IsSnapToTickEnabled permet de bloquer au frequence défini-->
             </Slider>
+        </Grid>
+
+        <Grid Margin="20,183,0,0.2" Grid.Row="1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
             <Button     Content="Aide"
                         Foreground="LightGray"
@@ -449,7 +447,7 @@
                         Grid.ColumnSpan="2" 
                         VerticalAlignment="Bottom"
                         BorderBrush="#0B2539"
-                        Click="Button_Aide" Margin="59.046,0,1.354,0">
+                        Click="Button_Aide" Margin="59.046,0,1.354,0" RenderTransformOrigin="-3.967,-6.329">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
