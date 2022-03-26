@@ -64,6 +64,11 @@ namespace Application_SFL1
             }
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
          //   EnvoiTcpClient(); // l'évènement est l'appel de la  fonction EnvoiTcpClient 
@@ -86,7 +91,12 @@ namespace Application_SFL1
 
         }*/
 
-   
+        private void Button_Aide(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
 
