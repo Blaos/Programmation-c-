@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System;
 using System.Text;
 using System.Net;
+using System.IO;
 
 namespace Application_SFL1
 {
@@ -72,6 +73,10 @@ namespace Application_SFL1
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
             EnvoiTcpClient(); // l'évènement est l'appel de la  fonction EnvoiTcpClient 
+            StreamReader oSR = new StreamReader(@"C:\Users\Bordeau\OneDrive\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
+            CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
+            Prout.Content = oCapteurAcquisition.force_vent;
+            oSR.Close();
         }
 
         public void EnvoiTcpClient()
@@ -91,6 +96,11 @@ namespace Application_SFL1
 
         } 
 
+
+        private void RecuperationTCPClient()
+        {
+
+        }
 
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

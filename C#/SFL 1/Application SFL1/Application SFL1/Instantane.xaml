@@ -559,7 +559,7 @@
         </Grid>
 
 
-        <Label Content="Label" HorizontalAlignment="Left" Margin="433,314,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
+        <Label Name="Prout" Foreground="White" HorizontalAlignment="Left" Margin="433,314,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2" Height="25"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="433,354,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="433,389,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2"/>
 
