@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Application_SFL1"
         mc:Ignorable="d"
         Title="Window1" AllowsTransparency="True" WindowStyle="None"
-        Background="#0B2546" WindowStartupLocation="CenterScreen">
+        Background="#0B2546" WindowStartupLocation="CenterScreen" Width="1200">
     <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
                                    enfin d'obtenir la couleur souhaité -->
 
@@ -70,9 +70,10 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="6"
-                                    Background="{TemplateBinding Background}">
+                        <Border     CornerRadius="0" 
+                                    VerticalAlignment="Bottom"
+                                    Background="{TemplateBinding Background}" Height="45"
+                                    Grid.Column="0" Grid.ColumnSpan="2">
                             <!-- Le style de boutons rond -->
                             <ContentPresenter VerticalAlignment="Center"
                                               HorizontalAlignment="Center"/>
@@ -94,7 +95,7 @@
                         Grid.Column="2"
                         Grid.ColumnSpan="2" 
                         VerticalAlignment="Center"
-                        Click="Button_Instantane">
+                        Click="Button_Instantane" Margin="0.4,36,0.2,0" Height="47">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -114,9 +115,10 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="6"
-                                    Background="{TemplateBinding Background}">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                    CornerRadius="0" 
+                                    VerticalAlignment="Center"
+                                    Background="{TemplateBinding Background}" Height="45" >
                             <!-- Le style de boutons rond -->
                             <ContentPresenter VerticalAlignment="Center"
                                               HorizontalAlignment="Center"/>
@@ -250,10 +252,10 @@
                         Foreground="White"
                         FontSize="12"
                         FontWeight="Medium"
-                        Grid.Column="15" 
+                        Grid.Column="16" 
                          VerticalAlignment="Center"
                         HorizontalAlignment="Right"
-                        Click="Button_Fenetre_Reduit"  >
+                        Click="Button_Fenetre_Reduit" Margin="0,32,28.6,36"  >
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
@@ -289,8 +291,8 @@
                 Foreground="White"
                 FontSize="16"
                 FontWeight="Medium"
-                Grid.Column="15"  VerticalAlignment="Center"  
-                Click="Button_Ecran_Plein" Grid.ColumnSpan="3" Height="20" Margin="42.8,29,42,34" >
+                Grid.Column="16"  VerticalAlignment="Center"  
+                Click="Button_Ecran_Plein" Grid.ColumnSpan="2" Height="20" Margin="13.8,27,5,36" >
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -330,7 +332,7 @@
                         Grid.Column="17" 
                         VerticalAlignment="Center"  
                         HorizontalAlignment="Left"
-                        Click="Button_Close" >
+                        Click="Button_Close" Margin="37.4,32,0,36" >
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
@@ -359,11 +361,10 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-
         </Grid>
 
-        <Grid Margin="0,111,0,84.2" Grid.Row="1">
+
+        <Grid Background="#0B2546"  MaxHeight="70"  Grid.Row="0" Margin="0,83,0,139" Height="46">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -381,11 +382,21 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Barre de puissance :" Grid.Column="2" Grid.ColumnSpan="4" VerticalAlignment="Bottom" FontSize="14" Foreground="White"></TextBlock>
-        </Grid>
 
-        <Grid Margin="0,175,0,20.2" Grid.Row="1">
+
+            <TextBlock Text="Commander" 
+            Foreground="White"
+            FontSize="25"
+            FontWeight="Medium"                  
+            FontFamily="Fonts/#Dosis"
+            Grid.Column="1" Grid.ColumnSpan="2"
+            HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Image Source="Images/stfe.png" Grid.Column="13" Grid.ColumnSpan="4" />
+        </Grid>
+        <Grid Background="#0B2546"  MaxHeight="70"  Grid.Row="0" Margin="1,129,-1,93" Height="46">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -403,28 +414,24 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Rectangle 
-              Grid.ColumnSpan="14" Fill="#FF1B7089" RadiusX="25" RadiusY="25" Margin="7,10,0,0" Grid.Column="1"/>
 
-            <TextBlock Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
-                       Grid.Column="2" 
-                       VerticalAlignment="Center">
-                   <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
-            </TextBlock>
-            <Slider Name="slValue"
-                    VerticalAlignment="Bottom"
-                    ValueChanged="Slider_ValueChanged"
-                    TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
-                    Maximum="100" Grid.Column="2" Grid.ColumnSpan="4"  Foreground="Black">
-                <!-- Le maximun est le maximun où la barre peut avoir comme paramètre // Le TickPlacement c'est le placement de petit tiré // le tickFrequency c'est la fréquence de tiré // IsSnapToTickEnabled permet de bloquer au frequence défini-->
-            </Slider>
+            <TextBlock Text="La" 
+                Foreground="White"
+                FontSize="25"
+                FontWeight="Medium"                  
+                FontFamily="Fonts/#Dosis"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Grid>
-
-        <Grid Margin="20,183,0,0.2" Grid.Row="1" >
-
+        <Grid Background="#0B2546"  MaxHeight="70"  Grid.Row="0" Margin="2,174,-2,48" Height="46">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -439,35 +446,53 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button     Content="Aide"
-                        Foreground="LightGray"
-                        FontSize="10"
-                        FontWeight="Medium"
-                        Grid.Column="11"
-                        Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom"
-                        BorderBrush="#0B2539"
-                        Click="Button_Aide" Margin="59.046,0,1.354,0" RenderTransformOrigin="-3.967,-6.329">
-                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+            <TextBlock Text="Soufflerie" 
+                Foreground="White"
+                FontSize="25"
+                FontWeight="Medium"                  
+                FontFamily="Fonts/#Dosis"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
-                        <Setter Property="Background" Value="#FF1B4157"/>
-                        <Setter Property="Cursor" Value="Hand"/>
+            <Image
+            Source="Images/éolienne.png"
+            RenderOptions.BitmapScalingMode="Fant" Grid.Column="3"/>
+        </Grid>
 
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver"  Value="True">
-                                <Setter Property="Background" Value="#00A3FF"/>
-                            </Trigger>
-                        </Style.Triggers>
+        <Grid Background="#0B2546"  MaxHeight="70"  Grid.Row="0" Margin="2,221,-2,1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-                    </Style>
-                </Button.Style>
-            </Button>
+            <TextBlock Text="Cette application commande la puissance de la soufflerie de manière instantané ou scénarisé. Cette application est détenu et réalisé en partenariat avec le Lycée St Félix " 
+              
+                Foreground="White"
+                       TextWrapping="Wrap"
+                FontSize="13"
+                FontWeight="Medium"                  
+                FontFamily="Fonts/#Dosis"
+                Grid.Column="1" Grid.ColumnSpan="6"
+                HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
 
         </Grid>
+      
 
     </Grid>
 
