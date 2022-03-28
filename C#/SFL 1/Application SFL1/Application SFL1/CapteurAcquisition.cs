@@ -25,7 +25,7 @@ namespace Application_SFL1
             {
                 oCapteurAcquisition = ser.Deserialize<CapteurAcquisition>(sCapteurAcquisitionSerialized);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Echec de désérialization du capteur d'acquisition en json.", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }

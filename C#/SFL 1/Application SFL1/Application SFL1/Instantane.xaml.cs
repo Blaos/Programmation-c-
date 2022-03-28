@@ -72,36 +72,49 @@ namespace Application_SFL1
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
-            EnvoiTcpClient(); // l'évènement est l'appel de la  fonction EnvoiTcpClient 
-            StreamReader oSR = new StreamReader(@"C:\Users\Bordeau\OneDrive\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
-            CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
-            Prout.Content = oCapteurAcquisition.force_vent;
-            oSR.Close();
+            EnvoiTcpClient();
+            // l'évènement est l'appel de la  fonction EnvoiTcpClient 
+            try
+            // Le try il essait de faire ce qui est demandé sinon il va dans le catch
+            { 
+                StreamReader oSR = new StreamReader(@"C:\Users\Bordeau\OneDrive\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
+                CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
+                Prout.Content = oCapteurAcquisition.force_vent;
+                oSR.Close();
+            }
+            
+            catch
+            // Si n'a pas réussit un message apparaitra pour signaler l'errreur
+            {
+                MessageBox.Show("En plus le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         public void EnvoiTcpClient()
         {
             string message = slValue.Value.ToString(); // message contiendra l'information du TextBox et en plus on choisi seulement d'envoyer le texte contenu dans le text box grâce au ".text", sans ce dernier on envoie tout le contenu du text box.
-            TcpClient client = new TcpClient(); // Création de l'objet client
-            client.Connect("127.0.0.1", 20); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
+            TcpClient oclient = new TcpClient(); 
+            // Création de l'objet client
+            try
+            { 
+                oclient.Connect("127.0.0.1", 20); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
 
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
 
-            NetworkStream stream = client.GetStream();
+                NetworkStream stream = oclient.GetStream();
 
-            stream.Write(data, 0, data.Length);
+                stream.Write(data, 0, data.Length);
 
-            stream.Close(); 
-            client.Close(); // on ferme le client
+                stream.Close(); 
+                oclient.Close(); // on ferme le client
+            }
 
+            catch
+            {
+                MessageBox.Show("La connection n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+            }
         } 
-
-
-        private void RecuperationTCPClient()
-        {
-
-        }
-
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
