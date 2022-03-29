@@ -64,10 +64,9 @@ namespace Application_SFL1
             this.WindowState = WindowState.Minimized;
         }
 
-        private void Button_Pliene_Ecran(object sender, RoutedEventArgs e)
+        private void Button_Ecran_Plein(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Maximized;
         }
-
     }
 }

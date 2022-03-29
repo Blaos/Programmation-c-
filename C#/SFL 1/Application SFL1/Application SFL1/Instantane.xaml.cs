@@ -77,16 +77,18 @@ namespace Application_SFL1
             try
             // Le try il essait de faire ce qui est demandé sinon il va dans le catch
             { 
-                StreamReader oSR = new StreamReader(@"C:\Users\Bordeau\OneDrive\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
+                StreamReader oSR = new StreamReader(@"C:\Users\curtis.bordeau\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
+                // @ evite de écrire le /
                 CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
-                Prout.Content = oCapteurAcquisition.force_vent;
+                Vent.Content = oCapteurAcquisition.force_vent;
+                Puissance.Content = oCapteurAcquisition.puissance;
                 oSR.Close();
             }
             
             catch
             // Si n'a pas réussit un message apparaitra pour signaler l'errreur
             {
-                MessageBox.Show("En plus le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
