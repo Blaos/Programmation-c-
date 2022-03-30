@@ -53,7 +53,14 @@ namespace Application_SFL1
 
         private void Button_Ecran_Plein(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Maximized;
+           if (WindowState != WindowState.Normal)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)

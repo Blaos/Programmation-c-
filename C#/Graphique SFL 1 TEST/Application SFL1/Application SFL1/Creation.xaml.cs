@@ -68,5 +68,18 @@ namespace Application_SFL1
         {
             this.WindowState = WindowState.Maximized;
         }
+        
+     /*   private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            // Nothing selected
+            if (List_Creation.SelectedItems.Count == 0)
+                return;
+
+            var selectedProjects = GetSelectedProjects();
+
+            List_Creation.Items.Clear();
+        }
+        */
     }
 }

@@ -9,6 +9,7 @@ using System;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace Application_SFL1
 {
@@ -73,11 +74,12 @@ namespace Application_SFL1
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
             EnvoiTcpClient();
+       
             // l'évènement est l'appel de la  fonction EnvoiTcpClient 
             try
             // Le try il essait de faire ce qui est demandé sinon il va dans le catch
-            { 
-                StreamReader oSR = new StreamReader(@"C:\Users\curtis.bordeau\Documents\GitHub\SN22_SFL1_2022\Développement\Aymeric (étudiant2)\MODULE ACQUISITION\module_aquisition\capteurs.JSON");
+            {
+                StreamReader oSR = new StreamReader("Données.jb");
                 // @ evite de écrire le /
                 CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
                 Vent.Content = oCapteurAcquisition.force_vent;
@@ -107,16 +109,46 @@ namespace Application_SFL1
 
                 stream.Write(data, 0, data.Length);
 
-                stream.Close(); 
-                oclient.Close(); // on ferme le client
+                
             }
 
             catch
             {
                 MessageBox.Show("La connection n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
+            }                          
+        }
+
+        public  void Receive()
+        {
+            {
+                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 20);
+
+                Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                try
+                {
+                    server.Connect(ip);
+                }
+                catch
+                {
+                    Console.WriteLine("Unable to connect to server.");
+                    return;
+
+                }
+
+                byte[] data = new byte[1024];
+                int receivedDataLength = server.Receive(data);
+                string stringData = Encoding.ASCII.GetString(data, 0, receivedDataLength);
+                Console.WriteLine(stringData);
+                //Vent.Content(stringData);
+
+
+                server.Shutdown(SocketShutdown.Both);
+                server.Close();
             }
-        } 
+        }
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

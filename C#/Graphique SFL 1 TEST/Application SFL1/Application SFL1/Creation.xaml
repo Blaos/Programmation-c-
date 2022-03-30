@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Application_SFL1"
         mc:Ignorable="d"
         Title="Window1" AllowsTransparency="True" WindowStyle="None"
-        Background="#0B2546" WindowStartupLocation="CenterScreen" WindowState="Maximized" Width="1400" Height="900">
+        Background="#0B2546" WindowStartupLocation="CenterScreen"  Width="1400" Height="900">
     <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
                                    enfin d'obtenir la couleur souhaité -->
 
@@ -363,7 +363,7 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="0,362,0,0">
+        <Grid Grid.Row="1" Margin="0,623,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <!-- Je segmente les parties du cadre en plusieur morceau-->
@@ -385,12 +385,20 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox HorizontalAlignment="Left" Height="454" VerticalAlignment="Bottom" Width="628" Grid.Column="0" Grid.ColumnSpan="9">
-            <ListBoxItem> CHOIX 1</ListBoxItem>
-            <ListBoxItem> CHOIX 2</ListBoxItem>
-                <ListBoxItem> Choix 3</ListBoxItem>
+
+            <ListBox Name="List_Creation" HorizontalAlignment="Left" Height="197" VerticalAlignment="Bottom" Width="311" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,-2,0,0">
+                <ListBoxItem>Période 1</ListBoxItem>
+                <ListBoxItem x:Name="vent"> Veuillez sélectionner le temps :</ListBoxItem>
+                <TextBox  Width="181" Name="temps"></TextBox>
+                <ListBoxItem>Veuillez sélectionner la puissance:</ListBoxItem>
+                <TextBox  Width="181" Name="puissance"></TextBox>
+                <ListBoxItem>Veuillez sélectionner le temps d'arret :</ListBoxItem>
+                <TextBox  Width="181"></TextBox>
+                <Button Content="Confirmer" Name="Bouton_click"  Height="21" Width="123" />
             </ListBox>
+
         </Grid>
+
     </Grid>
 
 </Window>
