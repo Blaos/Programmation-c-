@@ -103,3 +103,7 @@ C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Applicat
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Application SFL1.csproj.GenerateResource.cache
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Application SFL1.exe
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Application SFL1.pdb
+C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Structure.g.cs
+C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Test.g.cs
+C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Structure.baml
+C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Graphique SFL 1 TEST\Application SFL1\Application SFL1\obj\Debug\Test.baml

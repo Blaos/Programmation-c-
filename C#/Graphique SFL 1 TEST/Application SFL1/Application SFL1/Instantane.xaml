@@ -854,41 +854,7 @@
 
         </Grid>
 
-        <Grid VerticalAlignment="Top" Margin="211,-87,79,0" Height="291" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="243*"/>
-                <ColumnDefinition Width="157*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="50"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-
-            <Border Width="800"
-                            Height="35"
-                            Background="#FFFFFF"
-                            Margin="250,0,0,110"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
-
-            <Border Width="800"
-                            Height="35"
-                            Background="#00A3FF"
-                           Margin="100,0,0,0"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
-
-            <Border Width="800"
-                            Height="35"
-                            Background="#FFFFFF"
-                          Margin="175,110,0,0"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
-
-        </Grid>
-
-        <Grid Margin="942,600,-471,-75" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="291" VerticalAlignment="Top">
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,-331,-111" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="227">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition  Width="243*"/>
                 <ColumnDefinition Width="157*"/>
@@ -897,28 +863,62 @@
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="50"/>
+                    <RotateTransform Angle="54.489"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
 
             <Border Width="700"
-                            Height="35"
+                            Height="40"
                             Background="#FFFFFF"
-                            Margin="100,0,0,110"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
+                            Margin="100,0,0,120"
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
 
             <Border Width="700"
-                            Height="35"
+                            Height="40"
                             Background="#00A3FF"
                            Margin="-50,0,0,0"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
 
             <Border Width="700"
-                            Height="35"
+                            Height="40"
                             Background="#FFFFFF"
-                          Margin="25,110,0,0"
-                            CornerRadius="20" Grid.ColumnSpan="2"/>
+                          Margin="25,120,0,0"
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
+        </Grid>
+
+
+        <Grid VerticalAlignment="Top"   Margin="238,-70,123,0" RenderTransformOrigin="0.5,0.5" Height="227" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="243*"/>
+                <ColumnDefinition Width="157*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="54.489"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <Border Width="700"
+                            Height="40"
+                            Background="#FFFFFF"
+                            Margin="100,0,0,120"
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
+
+            <Border Width="700"
+                            Height="40"
+                            Background="#00A3FF"
+                           Margin="-50,0,0,0"
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
+
+            <Border Width="700"
+                            Height="40"
+                            Background="#FFFFFF"
+                          Margin="25,120,0,0"
+                            CornerRadius="30" Grid.ColumnSpan="2"/>
         </Grid>
 
     </Grid>

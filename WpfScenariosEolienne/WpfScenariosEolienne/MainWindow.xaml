@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfScenariosEolienne.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfScenariosEolienne"
+        mc:Ignorable="d"
+        Title="Scénario" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Margin="100,20">
+            <Label Content="Scénario"/>
+            <ListBox x:Name="lbPhases" MinHeight="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                <Label Content="durée (s) : "/>
+                <TextBox x:Name="txtDuree" Width="100" Margin="20,0"/>
+                <Label Content="puissance (%) : "/>
+                <TextBox x:Name="txtPuissance" Width="100" Margin="20,0"/>
+                <Button  x:Name="btnAjouter" Content="Ajouter" Width="100" Click="btnAjouter_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

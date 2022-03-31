@@ -65,7 +65,7 @@ namespace Application_SFL1
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique chose reste enfoncé la fenetre bouge avec le curseur
+            if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique droit et que je reste enfoncé la fenetre bouge avec le curseur
             {
                 DragMove();
             }

@@ -19,9 +19,14 @@ namespace Application_SFL1
     /// </summary>
     public partial class Creation : Window
     {
+
+
+
         public Creation()
         {
             InitializeComponent();
+
+
         }
  
 
@@ -68,18 +73,13 @@ namespace Application_SFL1
         {
             this.WindowState = WindowState.Maximized;
         }
-        
-     /*   private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click (sender As Object, e RoutedEventArgs e)
         {
-
-            // Nothing selected
-            if (List_Creation.SelectedItems.Count == 0)
-                return;
-
-            var selectedProjects = GetSelectedProjects();
-
-            List_Creation.Items.Clear();
+            List_Creation.Items.Add("ji");
+           
         }
-        */
+        
+        
     }
 }
