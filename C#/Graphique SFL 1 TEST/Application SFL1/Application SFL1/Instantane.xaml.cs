@@ -53,12 +53,19 @@ namespace Application_SFL1
 
         private void Button_Ecran_Plein(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Maximized;
+           if (WindowState != WindowState.Normal)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique chose reste enfoncé la fenetre bouge avec le curseur
+            if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique droit et que je reste enfoncé la fenetre bouge avec le curseur
             {
                 DragMove();
             }

@@ -359,7 +359,7 @@
             TextWrapping="Wrap"                           
             Margin="0,110,0,271" Grid.Row="1" Grid.Column="1"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="233" Margin="0,192,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="900" Grid.ColumnSpan="2"/>
-        <ListBox HorizontalAlignment="Left" Height="233" Margin="0,192,0,0" Grid.Row="1" VerticalAlignment="Top" Width="450">
+        <ListBox Height="233" Margin="0,192,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="450">
             <ScrollBar Name="McScroller" Orientation="Horizontal"  
                        Margin="10,10,0,0"  
                        Width ="30" Height="600" 

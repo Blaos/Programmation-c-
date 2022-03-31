@@ -63,6 +63,12 @@
     <Compile Include="Instantane.xaml.cs">
       <DependentUpon>Instantane.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Structure.xaml.cs">
+      <DependentUpon>Structure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
     <Page Include="Creation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +86,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Instantane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Structure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

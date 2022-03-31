@@ -30,8 +30,8 @@ namespace Application_SFL1
 
         private void Button_Instantane(object sender, RoutedEventArgs e)    // On regle le btn nommé button_instantané pour qui ouvre la fenetre intantané "choisit" et on ferme la fenetre actuel
         {
-            Instantane instantane = new Instantane();
-            instantane.Show();
+            Structure ostructure = new Structure();
+            ostructure.Show();
             this.Close();
         }
 

@@ -69,5 +69,7 @@ namespace Application_SFL1
                 DragMove();
             }
         }
+
     }
+
 }

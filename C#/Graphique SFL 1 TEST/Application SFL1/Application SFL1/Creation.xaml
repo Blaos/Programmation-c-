@@ -5,29 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Application_SFL1"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="900" AllowsTransparency="True" WindowStyle="None"
-        Background="#0B2546">
+        Title="Window1" AllowsTransparency="True" WindowStyle="None"
+        Background="#0B2546" WindowStartupLocation="CenterScreen"  Width="1400" Height="900">
     <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
                                    enfin d'obtenir la couleur souhaité -->
 
 
     <Grid >
         <Grid.RowDefinitions>
-            <!-- cela va créer le petit cadre en haut de la fenêtre -->
-            <RowDefinition Height="25"/>
-            <!-- Ici on défini la taille du cadre -->
-            <RowDefinition/>
+            <RowDefinition Height="41*" />
+            <RowDefinition Height="409*" />
         </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <!-- Je coupe la fenetre en deux -->
-            <ColumnDefinition Width="450"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
         <Grid Background="#081527" 
-              Grid.ColumnSpan="2"
-              MouseDown="Grid_MouseDown">
+              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="83" Grid.RowSpan="2"  >
             <!-- ici je défini la couleur et je met la couleur sur les deux coupage plus haut -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -45,87 +35,186 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Click="Button_Accueil" 
-                    Margin="0,-1,0,0"
-                    Grid.Column="1">
+            <Button     Content="Accueil"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom"
+                        Click="Button_Accueil">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
                 <Button.Style>
                     <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
                         <Setter Property="Background" Value="#081527"/>
                         <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
                     </Style>
                 </Button.Style>
-                <TextBlock Text="Accueil"           
-                       Foreground="White"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"      
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
-                <!--   Ici on va définir plusieurs chose pour le texte dans la colonne 1 : 
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border     CornerRadius="0" 
+                                    VerticalAlignment="Bottom"
+                                    Background="{TemplateBinding Background}" Height="45"
+                                    Grid.Column="0" Grid.ColumnSpan="2">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--   Ici on va définir plusieurs chose pour le boutton dans la colonne 1 : 
                                                          - nom // - la couleur de l'écriture // -le numéro de la collone // - le postionnement de l'écriture.
                                                          - Un peu plus complexe on définit un style d'écriture apporté par mes soin j'ai créer un dossier Fonts, 
                                                            où j'ai insérer un fichier qui contient style d'écriture défini par google trouvé sur internet ( ce fichier se nomme Dosis,style Dosis...)
                                                          - Le poid de l'écriture = la taille de l'écriture -->
-            </Button>
 
-            <Button Click="Button_Instantane"
-                    Grid.Column="2">
+
+            <Button     Content="Intantané"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom"
+                        Click="Button_Instantane"  Height="47">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
                 <Button.Style>
                     <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
                         <Setter Property="Background" Value="#081527"/>
                         <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
                     </Style>
                 </Button.Style>
-                      
-            <TextBlock Text="Instantané"
-                       Foreground="LightGray"
-                       Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
 
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                CornerRadius="0" 
+                                VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}" Height="45" >
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
-            <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
-            <Button Click="Button_Creation"
-                    Grid.Column="3">
+
+
+
+            <Button     Content="Créer"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="4"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom"
+                        Click="Button_Creation"  Height="47">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
                 <Button.Style>
                     <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
                         <Setter Property="Background" Value="#081527"/>
                         <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
                     </Style>
                 </Button.Style>
-                
-                <TextBlock Text="Créer"
-                       Foreground="LightGray"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
 
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="auto" Height="auto"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button     Content="Charger"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="6"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom"
+                        Height="47">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="auto" Height="auto"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
             <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
 
-            <TextBlock Text="Charger"
-                       Foreground="LightGray"
-                       Grid.Column="4"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" 
-                       FontWeight="Medium"/>
-            <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
 
 
             <Button Content="Option"
                         Foreground="White"
-                        FontSize="12"
-                        FontWeight="Medium"
-                        Margin="0,0,10,0"
+                        FontSize="14"
+                        FontWeight="Medium"                     
                         Grid.Column="12"
-                        Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top" >
+                        Grid.ColumnSpan="3" Height="25" VerticalAlignment="Center">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -136,7 +225,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver"  Value="True">
-                                <Setter Property="Background" Value="#FF4C70"/>
+                                <Setter Property="Background" Value="#FF296383"/>
                             </Trigger>
                         </Style.Triggers>
 
@@ -157,91 +246,213 @@
                 </Button.Template>
             </Button>
 
+
+
+            <Button     Content=" _ "
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Grid.Column="16" 
+                         VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Click="Button_Reduit_Ecran" Margin="0,32,28.6,36"  >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Wheat"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="15"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button Content="□"
+                Foreground="White"
+                FontSize="16"
+                FontWeight="Medium"
+                Grid.Column="16"  VerticalAlignment="Center"  
+                Click="Button_Ecran_Plein" Grid.ColumnSpan="2" Height="20" Margin="13.8,27,5,36" >
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Wheat"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" Height="15"
+                            CornerRadius="0"
+                            Background="{TemplateBinding Background}">
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button Content="X"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Grid.Column="17" 
+                        VerticalAlignment="Center"  
+                        HorizontalAlignment="Left"
+                        Click="Button_Close" Margin="37.4,32,0,36" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="15"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
 
-        <StackPanel Grid.Row="1"
-                    VerticalAlignment="Stretch"
-                    Margin="0,5,0,0" Cursor="Hand" Grid.ColumnSpan="2">
-            <!-- va permettre de segmenter en petit bout la fenetre pour me permettre d'aller dans les détails, écritue image... une grille quoi -->
+        <Grid Grid.Row="1" Margin="0,318,0,148">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <!-- Je segmente les parties du cadre en plusieur morceau-->
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <StackPanel>
+            <ListBox Name="List_Creation" HorizontalAlignment="Center" Height="352" VerticalAlignment="Top" Width="153" Grid.Column="7" Grid.ColumnSpan="2">
+                <ListBoxItem>Durée</ListBoxItem>
 
-                <StackPanel Orientation="Horizontal"
-                            Margin="450,0,0,30">
+            </ListBox>
+            <ListBox Name="List_Puissance" HorizontalAlignment="Center" Height="352" VerticalAlignment="Top" Width="155" Grid.Column="8" Grid.ColumnSpan="3" Margin="77,0,1,0">
+                <ListBoxItem>Puissance</ListBoxItem>
+            </ListBox>
+        </Grid>
 
-                    <Image Width="50" Height="50"
-                       Source="Images/éolienne.png"
-                           RenderOptions.BitmapScalingMode="Fant"/>
+        <Grid   MaxHeight="70" Margin="0,680,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Éolienne" 
-                           Foreground="White"
-                           FontSize="20"
-                           FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis"
-                               Margin="10,10,0,0"
-                               VerticalAlignment="Center"/>
-                    <!-- Dans le StackPanel j'introduis une "image",BitmapScalingMode c'est la résolution de l'image, plusieur option possible hight résolution = baisse perf -->
-                    <!-- Dans le Stack Panel je vais écrire avec des paramètres de style sur l'écriture -->
-                </StackPanel>
-
-                <TextBlock Text="Mode création :" 
-                           Foreground="White"
-                           FontSize="25"
-                           FontWeight="Medium"                  
-                           FontFamily="Fonts/#Dosis" 
-                           Margin="450,-20,10,20"/>
-                
-                <TextBlock Text="Le mode création, permet de créer un scénario. Vous devez configurer la puissance et le temps, avec autant de période que nécessaire. Ne pas oublier de nommé votre création." 
-                           Foreground="White"
-                           FontSize="12"
-                           FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis"
-                           TextWrapping="Wrap"                           
-                           Margin="450,-5,0,0"/>
-                
-                <!-- Permet que l'écriture s'aligne tout seul (à la ligne) -->
-
-            </StackPanel>
-
-        </StackPanel>
-
-        <Grid Grid.Column="1"
-              Grid.RowSpan="2"
-              Margin="3,-474,-718,194">
-
-            <Grid.RenderTransform>
-                <RotateTransform Angle="180"/>
-                <!-- permet de déterminer l'angle du grid-->
-            </Grid.RenderTransform>
-
-            <StackPanel Orientation="Horizontal"
-                        Margin="-251,-646,-354,-500"
-                        Panel.ZIndex="-1">
-                <StackPanel Margin="0,-200,0,1710">
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="#FFFFFF"
-                            Margin="450,200,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="#00A3FF"
-                            Margin="200,15,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="#FFFFFF"
-                            Margin="350,15,0,0"
-                            CornerRadius="20"/>
-
-                </StackPanel>
-
-            </StackPanel>
+            <ListBox Grid.ColumnSpan="11" Grid.Column="18" Margin="6,-2,15,2">
+                <TextBox  Name="durée" Height="24" TextWrapping="Wrap"  Width="120"/>
+                <Button HorizontalAlignment="Right" Content="Confirmer" x:Name="Bouton_click"  Height="21" />
+            </ListBox>
 
         </Grid>
 
     </Grid>
+
 </Window>
