@@ -74,12 +74,7 @@ namespace Application_SFL1
             this.WindowState = WindowState.Maximized;
         }
 
-        private void Button_Click (sender As Object, e RoutedEventArgs e)
-        {
-            List_Creation.Items.Add("ji");
-           
-        }
-        
+
         
     }
 }
