@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:Application_SFL1"
         mc:Ignorable="d"
         Title="Window1" AllowsTransparency="True" WindowStyle="None"
-        Background="#0B2546" WindowStartupLocation="CenterScreen"  Width="1600" Height="900">
+        Background="#0B2546" WindowStartupLocation="CenterScreen"  Height="450" Width="900">
     <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
                                    enfin d'obtenir la couleur souhaité -->
 
 
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*" />
-            <RowDefinition Height="409*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="13*" />
         </Grid.RowDefinitions>
         <Grid Background="#081527" 
               MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="83" Grid.RowSpan="2"  >
@@ -47,7 +47,7 @@
                         FontWeight="Medium"
                         Grid.Column="0"
                         Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom">
+                        VerticalAlignment="Bottom" Height="35"  Click="btn_accueil">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -68,9 +68,9 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border     CornerRadius="0" 
-                                    VerticalAlignment="Bottom"
-                                    Background="{TemplateBinding Background}" Height="45"
-                                    Grid.Column="0" Grid.ColumnSpan="2">
+                                   
+                                    Background="{TemplateBinding Background}" Height="Auto"
+                                    Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,2">
                             <!-- Le style de boutons rond -->
                             <ContentPresenter VerticalAlignment="Center"
                                               HorizontalAlignment="Center"/>
@@ -92,7 +92,7 @@
                         FontWeight="Medium"
                         Grid.Column="2"
                         Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom" Height="47">
+                        VerticalAlignment="Bottom" Height="35">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -133,7 +133,7 @@
                         FontWeight="Medium"
                         Grid.Column="4"
                         Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom" Height="47">
+                        VerticalAlignment="Bottom" Height="35">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -171,7 +171,7 @@
                         Grid.Column="6"
                         Grid.ColumnSpan="2" 
                         VerticalAlignment="Bottom"
-                        Height="47">
+                        Height="35">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -249,9 +249,9 @@
                         Foreground="White"
                         FontSize="12"
                         FontWeight="Medium"
-                        Grid.Column="16" 
-                        VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,32,28.6,36">
-                
+                        Grid.Column="15" 
+                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="btn_reduire">
+
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
@@ -287,7 +287,7 @@
                 Foreground="White"
                 FontSize="16"
                 FontWeight="Medium"
-                Grid.Column="16"  VerticalAlignment="Center"  Grid.ColumnSpan="2" Height="20" Margin="76,27,62,36" >
+                Grid.Column="16"  VerticalAlignment="Center"  Click="btn_agrandir">
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -324,9 +324,9 @@
                         Foreground="White"
                         FontSize="12"
                         FontWeight="Medium"
-                        Grid.Column="17" 
+                        Grid.Column="18" 
                         VerticalAlignment="Center"  
-                        HorizontalAlignment="Left" Margin="37.4,32,0,36" >
+                        HorizontalAlignment="Left" Click="btn_close">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
@@ -730,7 +730,7 @@
 
         </Grid>
 
-        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -783,7 +783,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -836,7 +836,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,434,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,434,0,-106" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -889,7 +889,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,496,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,496,0,-168" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -942,7 +942,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,496,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,496,0,-168" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -995,7 +995,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,558,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,558,0,-230" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -1048,7 +1048,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,620,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,620,0,-292" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -1101,7 +1101,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,682,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,682,0,-354" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -1154,7 +1154,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,744,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,744,0,-416" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -1207,7 +1207,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,806,0,0" VerticalAlignment="Top" Height="12" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,806,0,-428" VerticalAlignment="Top" Height="12" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

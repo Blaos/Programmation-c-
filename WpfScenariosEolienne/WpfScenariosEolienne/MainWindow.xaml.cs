@@ -30,7 +30,7 @@ namespace WpfScenariosEolienne
             string myConnectionString = "server=127.0.0.1;"
                                               + "uid=root;"
                                               + "pwd=;"
-                                              + "database=eolienne;"
+                                              + "database=eoliennedb;"
                                               + "Charset=latin1;";
 
             conn = new MySqlConnection(myConnectionString);
@@ -43,7 +43,7 @@ namespace WpfScenariosEolienne
             int duree = Int32.Parse(txtDuree.Text);
             int puissance = Int32.Parse(txtPuissance.Text);
 
-            string sql = "INSERT INTO `phase` (`id`, `duree`, `puissance`, `scenario_id`) VALUES (NULL, '" + duree + "', '" + puissance + "', '1');";
+            string sql = "INSERT INTO `periode` (`id`, `duree`, `puissance_soufflerie`, `scenario_id`) VALUES (NULL, '" + duree + "', '" + puissance + "', '1');";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -55,7 +55,7 @@ namespace WpfScenariosEolienne
 
         private void MAJListePhases()
         {
-            string sql = "SELECT * FROM `phase` WHERE `scenario_id` = 1";
+            string sql = "SELECT * FROM `periode` WHERE `id`";
 
             conn.Open();
 
@@ -68,11 +68,11 @@ namespace WpfScenariosEolienne
             {
                 while(rdr.Read())
                 {
-                    int idPhase = Int32.Parse(rdr["id"].ToString());
+                    int id = Int32.Parse(rdr["id"].ToString());
                     int duree = Int32.Parse(rdr["duree"].ToString());
-                    int puissance = Int32.Parse(rdr["puissance"].ToString());
+                    int puissance = Int32.Parse(rdr["puissance_soufflerie"].ToString());
 
-                    lbPhases.Items.Add(new ListBoxItemPhase(idPhase, duree, puissance, this));
+                    lbPhases.Items.Add(new ListBoxItemPhase(id, duree, puissance, this));
                 }
             }
 
@@ -81,7 +81,7 @@ namespace WpfScenariosEolienne
 
         public void supprimerPhase(int id)
         {
-            string sql = "DELETE FROM `phase` WHERE `phase`.`id` = " + id;
+            string sql = "DELETE FROM `periode` WHERE `id` = " + id;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);

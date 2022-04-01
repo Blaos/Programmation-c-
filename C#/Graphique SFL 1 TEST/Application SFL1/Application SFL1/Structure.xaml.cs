@@ -32,6 +32,35 @@ namespace Application_SFL1
                 DragMove();
             }
         }
+
+        private void btn_close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_reduire(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void btn_agrandir(object sender, RoutedEventArgs e)
+        {
+            if (WindowState != WindowState.Normal)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void btn_accueil(object sender, RoutedEventArgs e)
+        {
+            MainWindow omainwindow = new MainWindow();
+            omainwindow.Show();
+            this.Close();
+        }
     }
 
 }
