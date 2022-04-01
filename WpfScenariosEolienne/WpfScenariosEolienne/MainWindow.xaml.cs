@@ -27,7 +27,7 @@ namespace WpfScenariosEolienne
         {
             InitializeComponent();
 
-            string myConnectionString = "server=10.16.2.177;"
+            string myConnectionString = "server=127.0.0.1;"
                                               + "uid=Opérateur;"
                                               + "pwd=Nantes44;"
                                               + "database=eoliennedb;"

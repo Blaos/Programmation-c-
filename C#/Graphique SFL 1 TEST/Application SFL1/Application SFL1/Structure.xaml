@@ -17,7 +17,7 @@
             <RowDefinition Height="13*" />
         </Grid.RowDefinitions>
         <Grid Background="#081527" 
-              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="83" Grid.RowSpan="2"  >
+              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61" Grid.RowSpan="2"  >
             <!-- ici je défini la couleur et je met la couleur sur les deux coupage plus haut -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

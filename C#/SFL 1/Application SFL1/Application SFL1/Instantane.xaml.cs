@@ -74,7 +74,7 @@ namespace Application_SFL1
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
             EnvoiTcpClient();
-       
+            Receive();
             // l'évènement est l'appel de la  fonction EnvoiTcpClient 
             try
             // Le try il essait de faire ce qui est demandé sinon il va dans le catch
@@ -101,7 +101,7 @@ namespace Application_SFL1
             // Création de l'objet client
             try
             { 
-                oclient.Connect("127.0.0.1", 20); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
+                oclient.Connect("10.16.96.19", 23); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
 
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
 
@@ -122,7 +122,7 @@ namespace Application_SFL1
         public  void Receive()
         {
             {
-                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 20);
+                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("10.16.96.19"), 23);
 
                 Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -132,8 +132,7 @@ namespace Application_SFL1
                 }
                 catch
                 {
-                    Console.WriteLine("Unable to connect to server.");
-                    return;
+                    MessageBox.Show("La connection n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
                 }
 
