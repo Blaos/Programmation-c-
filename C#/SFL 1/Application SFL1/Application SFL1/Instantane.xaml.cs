@@ -140,7 +140,7 @@ namespace Application_SFL1
                 int receivedDataLength = server.Receive(data);
                 string stringData = Encoding.ASCII.GetString(data, 0, receivedDataLength);
                 Console.WriteLine(stringData);
-                //Vent.Content(stringData);
+                
 
 
                 server.Shutdown(SocketShutdown.Both);
