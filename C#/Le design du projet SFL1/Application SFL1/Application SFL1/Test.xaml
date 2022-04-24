@@ -838,6 +838,30 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
+
+
+        <Border Width="700"
+                            Height="35"
+                            Background="#FFFFFF"
+                            Margin="150,0,0,0"
+                            CornerRadius="20"/>
+
+        <Border Width="700"
+                Height="35"
+                Background="#00A3FF"
+                Margin="0,15,0,0"
+                CornerRadius="20" >
+            <Border.RenderTransform>
+                <RotateTransform Angle="30.9"/>
+            </Border.RenderTransform>
+        </Border>
+
+        <Border Width="700"
+                            Height="35"
+                            Background="#FFFFFF"
+                            Margin="75,15,0,0"
+                            CornerRadius="20"/>
+
     </Grid>
 
 
