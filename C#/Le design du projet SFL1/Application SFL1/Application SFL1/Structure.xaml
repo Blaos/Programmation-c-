@@ -12,6 +12,7 @@
 
 
     <Grid >
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="13*" />
@@ -67,10 +68,10 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border     CornerRadius="0" 
-                                   
-                                    Background="{TemplateBinding Background}" Height="Auto"
-                                    Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,2">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                CornerRadius="0" 
+                                VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}" Height="45" >
                             <!-- Le style de boutons rond -->
                             <ContentPresenter VerticalAlignment="Center"
                                               HorizontalAlignment="Center"/>
@@ -355,6 +356,8 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            
+            
         </Grid>
 
 

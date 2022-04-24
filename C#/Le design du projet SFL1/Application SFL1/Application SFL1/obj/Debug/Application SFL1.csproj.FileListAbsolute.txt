@@ -133,3 +133,26 @@ C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design du projet SFL1\Appl
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.csproj.GenerateResource.cache
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.exe
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\bin\Debug\Application SFL1.exe.config
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\bin\Debug\Application SFL1.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\bin\Debug\Application SFL1.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.csproj.AssemblyReference.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Creation.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\MainWindow.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Instantane.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Structure.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Test.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\App.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1_MarkupCompile.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1_MarkupCompile.lref
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Creation.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\MainWindow.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Instantane.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Structure.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Test.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.g.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application_SFL1.Properties.Resources.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.csproj.GenerateResource.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.csproj.CoreCompileInputs.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Le design du projet SFL1\Application SFL1\Application SFL1\obj\Debug\Application SFL1.pdb
