@@ -12,13 +12,10 @@
 
 
     <Grid >
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="13*" />
-        </Grid.RowDefinitions>
+
+
         <Grid Background="#081527" 
-              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61" Grid.RowSpan="2"  >
+              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61"  >
             <!-- ici je défini la couleur et je met la couleur sur les deux coupage plus haut -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -356,8 +353,8 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
-            
+
+
         </Grid>
 
 
@@ -733,7 +730,7 @@
 
         </Grid>
 
-        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -786,7 +783,59 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,434,0,0" VerticalAlignment="Top" Height="16">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

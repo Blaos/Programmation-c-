@@ -1,15 +1,11 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Net.Sockets;
-using System;
 using System.Text;
 using System.Net;
 using System.IO;
-using System.Threading;
 
 namespace Application_SFL1
 {
