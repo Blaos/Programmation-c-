@@ -125,7 +125,7 @@
 
 
 
-            <Button     Content="Créer"
+            <Button     Content="Créer / Charger"
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium"
