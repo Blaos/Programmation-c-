@@ -43,7 +43,7 @@ namespace Application_SFL1
         }
         private void Button_Creation(object sender, RoutedEventArgs e)  
         {
-            StructureB ostructure = new StructureB();
+            Structure ostructure = new Structure();
             ostructure.Show();
             this.Close();
         }
