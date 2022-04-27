@@ -54,6 +54,11 @@ namespace WpfScenariosEolienne
             MAJListePhases();
         }
 
+        private void btnAjouterS_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
         private void MAJListePhases()
         {
             string sql = "SELECT * FROM `periode` WHERE `id`";
@@ -90,6 +95,16 @@ namespace WpfScenariosEolienne
             conn.Close();
 
             MAJListePhases();
+        }
+
+        private void txtPuissance_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Voulez-vous finaliser votre résultat ?", "Confirmer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+               
+            }
         }
     }
 

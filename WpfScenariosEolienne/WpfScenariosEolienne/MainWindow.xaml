@@ -7,15 +7,22 @@
         mc:Ignorable="d"
         Title="Scénario" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel VerticalAlignment="Center" Margin="100,20">
-            <Label Content="Scénario"/>
+        <StackPanel VerticalAlignment="Center" Margin="9,4,0,21" Height="394">
+            <Label Content="Résumé du scénario"/>
             <ListBox x:Name="lbPhases" MinHeight="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
                 <Label Content="durée (s) : "/>
                 <TextBox x:Name="txtDuree" Width="100" Margin="20,0"/>
                 <Label Content="puissance (%) : "/>
-                <TextBox x:Name="txtPuissance" Width="100" Margin="20,0"/>
+                <TextBox x:Name="txtPuissance" Width="100" Margin="20,0" TextChanged="txtPuissance_TextChanged"/>
                 <Button  x:Name="btnAjouter" Content="Ajouter" Width="100" Click="btnAjouter_Click"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Width="782">
+                <Label  Content="Nom  : " Width="40"/>               
+                <TextBox x:Name="txtNom" Width="100" TextChanged="txtPuissance_TextChanged"/>
+                <Button  x:Name="btnAjouterS" Content="Finaliser" Width="100" Click="btnAjouter_Click" />
+
             </StackPanel>
         </StackPanel>
 

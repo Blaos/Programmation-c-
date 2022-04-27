@@ -72,7 +72,7 @@ namespace Application_SFL1
             EnvoiTcpClient();
             Receive();
             // l'évènement est l'appel de la  fonction EnvoiTcpClient 
-            try
+         /*   try
             // Le try il essait de faire ce qui est demandé sinon il va dans le catch
             {
                 StreamReader oSR = new StreamReader("Données.jb");
@@ -87,7 +87,7 @@ namespace Application_SFL1
             // Si n'a pas réussit un message apparaitra pour signaler l'errreur
             {
                 MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
+            } */
         }
 
         public void EnvoiTcpClient()
@@ -97,7 +97,7 @@ namespace Application_SFL1
             // Création de l'objet client
             try
             { 
-                oclient.Connect("10.16.96.19", 23); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
+                oclient.Connect("127.0.0.1", 23); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
 
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
 
@@ -105,7 +105,9 @@ namespace Application_SFL1
 
                 stream.Write(data, 0, data.Length);
 
-                
+                stream.Close();
+                oclient.Close();
+
             }
 
             catch
@@ -118,7 +120,7 @@ namespace Application_SFL1
         public  void Receive()
         {
             {
-                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("10.16.96.19"), 23);
+                IPEndPoint ip = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 23);
 
                 Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
