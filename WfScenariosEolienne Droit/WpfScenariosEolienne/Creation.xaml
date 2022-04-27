@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfScenariosEolienne.Creation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfScenariosEolienne"
+        mc:Ignorable="d"
+        Title="Scénario" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid Margin="14,343,-14,51">
+            <Button   Content="Button_Creation" Width="100" Click="Button_Creation" Margin="-1,27,693,-27" />
+            <Button   Content="Button_charger" Width="100" Click="Button_Charger" Margin="108,26,584,-26" />
+        </Grid>
+        <StackPanel VerticalAlignment="Center" Margin="9,4,0,21" Height="394">
+            <Label Content="Résumé du scénario"/>
+            <ListBox x:Name="listScenario" MinHeight="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="318"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Width="782"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

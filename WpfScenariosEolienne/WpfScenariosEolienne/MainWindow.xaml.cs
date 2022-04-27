@@ -61,7 +61,7 @@ namespace WpfScenariosEolienne
 
         private void MAJListePhases()
         {
-            string sql = "SELECT * FROM `periode` WHERE `id`";
+            string sql = "SELECT * FROM `periode` WHERE `scenario_id` = 1";
 
             conn.Open();
 
@@ -69,18 +69,7 @@ namespace WpfScenariosEolienne
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             lbPhases.Items.Clear();
-
-            if (rdr.HasRows)
-            {
-                while(rdr.Read())
-                {
-                    int id = Int32.Parse(rdr["id"].ToString());
-                    int duree = Int32.Parse(rdr["duree"].ToString());
-                    int puissance = Int32.Parse(rdr["puissance_soufflerie"].ToString());
-
-                    lbPhases.Items.Add(new ListBoxItemPhase(id, duree, puissance, this));
-                }
-            }
+            
 
             conn.Close();
         }
