@@ -1,9 +1,9 @@
-﻿<Window x:Class="Application_SFL1.Test"
+﻿<Window x:Class="Structure.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Application_SFL1"
+        xmlns:local="clr-namespace:Structure"
         mc:Ignorable="d"
         Title="Window1" AllowsTransparency="True" WindowStyle="None"
         Background="#0B2546" WindowStartupLocation="CenterScreen"  Height="450" Width="900">
@@ -13,12 +13,9 @@
 
     <Grid >
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="13*" />
-        </Grid.RowDefinitions>
+
         <Grid Background="#081527" 
-              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61" Grid.RowSpan="2"  >
+              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61"  >
             <!-- ici je défini la couleur et je met la couleur sur les deux coupage plus haut -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -251,7 +248,7 @@
                         FontSize="12"
                         FontWeight="Medium"
                         Grid.Column="15" 
-                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="btn_accueil">
+                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="btn_reduire">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -733,7 +730,7 @@
 
         </Grid>
 
-        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -786,7 +783,7 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,372,0,-44" VerticalAlignment="Top" Height="62" Grid.Row="1">
+        <Grid   MaxHeight="70" Margin="0,372,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -838,55 +835,58 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,434,0,0" VerticalAlignment="Top" Height="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-
-        <Border Width="700"
-                            Height="35"
-                            Background="#FFFFFF"
-                            Margin="38,-117,162,142"
-                            CornerRadius="20" RenderTransformOrigin="0.5,0.5" >
-            <Border.RenderTransform>
-                <TransformGroup>
-
-                    <RotateTransform Angle="60"/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-
-        <Border Width="700"
-                Height="35"
-                Background="#00A3FF"
-                Margin="141,-67,59,92"
-                CornerRadius="20" RenderTransformOrigin="0.5,0.5" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="60"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-
-
-        <Border Width="700"
-                   Height="35"
-                            Background="#FFFFFF"
-                            Margin="150,-158,50,183"
-                            CornerRadius="20" RenderTransformOrigin="0.5,0.5"
-                Grid.Column="6"
-                        Grid.ColumnSpan="2" >
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="60"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-
-
+        </Grid>
 
     </Grid>
 
