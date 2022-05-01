@@ -3,3 +3,15 @@ C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\App.g.cs
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne_MarkupCompile.cache
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne_MarkupCompile.lref
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\bin\Debug\WPF_Eolienne.exe.config
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\bin\Debug\WPF_Eolienne.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\bin\Debug\WPF_Eolienne.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\MainWindow.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.g.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.Properties.Resources.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.csproj.GenerateResource.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.csproj.CoreCompileInputs.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\Instantane.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\Instantane.baml

@@ -18,9 +18,9 @@ namespace WPF_Eolienne
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Instantane : Window
     {
-        public MainWindow()
+        public Instantane()
         {
             InitializeComponent();
         }
@@ -33,26 +33,26 @@ namespace WPF_Eolienne
             }
         }
 
-        private void Btn_Accueil(object sender, RoutedEventArgs e)
+        private void Btn_Accueil (object sender, RoutedEventArgs e)
         {
-            MainWindow omainWindow = new MainWindow();
-            omainWindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
           private void Btn_Instantane (object sender, RoutedEventArgs e)    // On regle le btn nommé button_instantané pour qui ouvre la fenetre intantané "choisit" et on ferme la fenetre actuel
            {
-               Instantane oinstantane = new Instantane();
-               oinstantane.Show();
+               Instantane instantane = new Instantane();
+               instantane.Show();
                this.Close();
            }
 
-        /*   private void Button_Creation(object sender, RoutedEventArgs e)
-           {
-               Creation creation = new Creation();
-               creation.Show();
-               this.Close();
-           } */
+        /*  private void Button_Creation(object sender, RoutedEventArgs e)
+          {
+              Creation creation = new Creation();
+              creation.Show();
+              this.Close();
+          } */
 
         private void Btn_Close(object sender, RoutedEventArgs e)
         {
@@ -71,7 +71,7 @@ namespace WPF_Eolienne
             }
         }
 
-        private void Btn_Reduire (object sender, RoutedEventArgs e)
+        private void Btn_Reduire(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized; // On agrandi la fenetre
         }
