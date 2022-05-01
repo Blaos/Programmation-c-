@@ -83,7 +83,7 @@
                                                          - Le poid de l'écriture = la taille de l'écriture -->
 
 
-            <Button     Content="Intantané"
+            <Button     Content="Instantané"
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium"
@@ -372,6 +372,7 @@
         </Grid>
 
         <Grid   MaxHeight="70" Margin="0,62,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+    
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -424,6 +425,10 @@
 
         </Grid>
         <Grid   MaxHeight="70" Margin="0,124,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+            <Image Width="60" Height="60"
+                   Source="Images/éolienne.png"
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Grid.Column="20" Grid.ColumnSpan="6" />
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

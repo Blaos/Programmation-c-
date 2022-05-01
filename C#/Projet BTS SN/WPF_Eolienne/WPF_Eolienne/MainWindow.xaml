@@ -84,7 +84,7 @@
                                                          - Le poid de l'écriture = la taille de l'écriture -->
 
 
-            <Button     Content="Intantané"
+            <Button     Content="Instantané"
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium"
