@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Sockets;
 
 namespace WPF_Eolienne
 {
@@ -76,6 +77,54 @@ namespace WPF_Eolienne
             this.WindowState = WindowState.Minimized; // On agrandi la fenetre
         }
 
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
+        {
+            EnvoiTcpClient();
+            // l'évènement est l'appel de la  fonction EnvoiTcpClient 
+            /*   try
+               // Le try il essait de faire ce qui est demandé sinon il va dans le catch
+               {
+                   StreamReader oSR = new StreamReader("Données.jb");
+                   // @ evite de écrire le /
+                   CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
+                   Vent.Content = oCapteurAcquisition.force_vent;
+                   Puissance.Content = oCapteurAcquisition.puissance;
+                   oSR.Close();
+               }
+
+               catch
+               // Si n'a pas réussit un message apparaitra pour signaler l'errreur
+               {
+                   MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+               } */
+        }
+
+        public void EnvoiTcpClient()
+        {
+            string message = slValue.Value.ToString(); // message contiendra l'information du TextBox et en plus on choisi seulement d'envoyer le texte contenu dans le text box grâce au ".text", sans ce dernier on envoie tout le contenu du text box.
+            TcpClient oclient = new TcpClient();
+            // Création de l'objet client
+            try
+            {
+                oclient.Connect("127.0.0.1", 23); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
+
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
+
+                NetworkStream stream = oclient.GetStream();
+
+                stream.Write(data, 0, data.Length);
+
+                stream.Close();
+                oclient.Close();
+
+            }
+
+            catch
+            {
+                MessageBox.Show("La connection n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+            }
+        }
 
     }
 }
