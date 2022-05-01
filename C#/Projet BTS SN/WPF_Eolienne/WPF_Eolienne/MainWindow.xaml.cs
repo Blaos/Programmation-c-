@@ -47,12 +47,12 @@ namespace WPF_Eolienne
                this.Close();
            }
 
-        /*   private void Button_Creation(object sender, RoutedEventArgs e)
-           {
-               Creation creation = new Creation();
-               creation.Show();
-               this.Close();
-           } */
+        private void Btn_Creation(object sender, RoutedEventArgs e)
+        {
+            Charger ocharger = new Charger();
+            ocharger.Show();
+            this.Close();
+        }
 
         private void Btn_Close(object sender, RoutedEventArgs e)
         {

@@ -191,3 +191,4 @@ C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\WfScenariosEolienne Droit\WpfS
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\WfScenariosEolienne Droit\WpfScenariosEolienne\obj\Debug\WpfScenariosEolienne.csproj.CopyComplete
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\WfScenariosEolienne Droit\WpfScenariosEolienne\obj\Debug\WpfScenariosEolienne.exe
 C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\WfScenariosEolienne Droit\WpfScenariosEolienne\obj\Debug\WpfScenariosEolienne.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\WfScenariosEolienne Droit\WpfScenariosEolienne\obj\Debug\WpfScenariosEolienne.csproj.AssemblyReference.cache

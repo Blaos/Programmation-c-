@@ -132,7 +132,7 @@
                         FontWeight="Medium"
                         Grid.Column="4"
                         Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom" Height="35">
+                        VerticalAlignment="Bottom" Height="35" Click="Btn_Creation">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>

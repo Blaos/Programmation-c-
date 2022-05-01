@@ -130,7 +130,7 @@
                         FontWeight="Medium"
                         Grid.Column="4"
                         Grid.ColumnSpan="2" 
-                        VerticalAlignment="Bottom" Height="35">
+                        VerticalAlignment="Bottom" Height="35" Click="Btn_Creation">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -623,7 +623,6 @@
                  Height="23"       
                  Background="#0B2546"
                  TextWrapping="Wrap"            
-                 
                  Name="valeur_slider" 
                  Grid.Column="1" Grid.ColumnSpan="2" >
 
@@ -634,6 +633,18 @@
                        Foreground="AliceBlue" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
                <Run Text="%"/><Run Text=" "/></TextBlock>
 
+            <Image 
+                       Source="Images/Power.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                   Grid.Column="25" Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="Puissance :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Grid.Column="27" Grid.ColumnSpan="7" VerticalAlignment="Center"/>
+
+             <Label Name="Puissance" Foreground="White"  Grid.Column="35" Grid.ColumnSpan="10"  Height="25"/>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -689,13 +700,25 @@
         <Grid   MaxHeight="70" Margin="0,276,0,0" VerticalAlignment="Top" Height="40">
             <StackPanel Grid.Column="1" Grid.ColumnSpan="20">
                 <TextBlock Text="Veuillez indiquer la puissance de la soufflerie :"  Foreground="White"  FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis"
-                           TextWrapping="Wrap"
+                       FontFamily="Fonts/#Dosis"
+                       TextWrapping="Wrap"
                        FontSize="18"
                        TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left"  />
             </StackPanel>
-            
-          
+
+            <Image Grid.Column="25" Grid.ColumnSpan="2"
+                       Source="Images/Wind.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+            <TextBlock Text="Force du vent :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                               VerticalAlignment="Center" Grid.Column="27" Grid.ColumnSpan="7"/>
+
+            <Label Name="Vent" Foreground="White"  Grid.Column="35" Grid.ColumnSpan="10"  Height="25"/>
+
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -758,6 +781,12 @@
 
                 <!-- Le maximun est le maximun où la barre peut avoir comme paramètre // Le TickPlacement c'est le placement de petit tiré // le tickFrequency c'est la fréquence de tiré // IsSnapToTickEnabled permet de bloquer au frequence défini-->
             </Slider>
+            <Image Source="Images/Urgence.png" Height="30" Width="40"  Grid.Column="24" Grid.ColumnSpan="4"/>
+
+            <TextBlock Text="Arrêt d'urgence :"  Foreground="White"  FontWeight="Medium"
+                FontFamily="Fonts/#Dosis"
+                TextWrapping="Wrap"
+                FontSize="18" Grid.Column="28" Grid.ColumnSpan="8" VerticalAlignment="Center" TextDecorations="Underline"/>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -811,7 +840,40 @@
 
         </Grid>
 
-        <Grid   MaxHeight="70" Margin="0,378,0,0" VerticalAlignment="Top" Height="62">
+        <Grid   MaxHeight="70" Margin="0,392,0,0" VerticalAlignment="Top" Height="48">
+          <Button     Content="Arrêt"
+                        Click="Button_Arret"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"  Grid.Column="25" Grid.ColumnSpan="10"  Background="#FF383535" >
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="Red"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="180" Height="40"
+                                    CornerRadius="50"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+           
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -863,7 +925,7 @@
             </Grid.ColumnDefinitions>
 
         </Grid>
-        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,434,0,0" VerticalAlignment="Top" Height="16">
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,444,0,-0.4" VerticalAlignment="Top" Height="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
