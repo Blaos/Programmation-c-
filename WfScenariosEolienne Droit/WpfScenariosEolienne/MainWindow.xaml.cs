@@ -58,10 +58,10 @@ using MySql.Data.MySqlClient;
         {
 
             string nom = String.Format(txtScenario.Text);
-            DateTime date_creation = DateTime.Parse(txtDate.Text);
+         //   DateTime date_creation = DateTime.Parse(txtDate.Text);
 
 
-            string sql = "INSERT INTO `scenario` ( `nom`, `date_creation` ) VALUES ( '" + nom + "', '" + date_creation + "',);";
+            string sql = "INSERT INTO `scenario` ( nom, date_creation! ) VALUES ( '" + nom + "', Now());";
 
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);

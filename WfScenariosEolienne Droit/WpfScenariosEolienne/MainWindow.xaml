@@ -8,8 +8,8 @@
         Title="Scénario" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="0,-25,0,419">
-            <Button   Content="Creation" Width="100" Click="Button_Creation" Margin="1,26,691,-26" />
-            <Button   Content="charger" Width="100" Click="Button_Charger" Margin="105,28,587,-28" />
+            <Button   Content="charger" Width="100" Click="Button_Creation" Margin="1,26,691,-26" />
+            <Button   Content="creation" Width="100" Click="Button_Charger" Margin="105,28,587,-28" />
         </Grid>
         <StackPanel VerticalAlignment="Bottom" Height="380">
 
@@ -19,11 +19,8 @@
                     <ColumnDefinition Width="113*"/>
                     <ColumnDefinition Width="283*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Nom du scénario" Margin="0,46,117,-1" />
+                <Label  Content="Nom du scénario" Margin="0,46,117,-1" />
                 <TextBox x:Name="txtScenario" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="117,0,0,0" Width="124" Grid.ColumnSpan="2"/>
-
-                <Label Content="Date de création" Margin="87,44,370,1" Grid.Column="1" />
-                <TextBox x:Name="txtDate" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="206,0,0,2" Width="124" Grid.Column="1"/>
             </Grid>
             <Grid Height="113">
                 <Grid.ColumnDefinitions>
@@ -31,7 +28,7 @@
                     <ColumnDefinition Width="21*"/>
                     <ColumnDefinition Width="566*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Finaliser la création du scénario" Margin="0,46,20.155,-1" />
+                <Label Content="Finaliser la création du scénario" Margin="0,46,20,33" />
                 <Button   Content="Finaliser " Click="ajout_Scenario" Margin="204,48,493,40" Grid.ColumnSpan="3" />
             </Grid>
 

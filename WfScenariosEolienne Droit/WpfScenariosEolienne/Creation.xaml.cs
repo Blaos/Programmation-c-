@@ -39,7 +39,7 @@ namespace WpfScenariosEolienne
             MAJListePhases();
         }
 
-               private void Button_Creation(object sender, RoutedEventArgs e)
+        private void Button_Creation(object sender, RoutedEventArgs e)
         {
             Creation creation = new Creation();
             creation.Show();
@@ -52,30 +52,13 @@ namespace WpfScenariosEolienne
         mainWindow.Show();
             this.Close();
         }
+      
 
-      /*  private void btnAjouter_Click(object sender, RoutedEventArgs e)
-        {
-            int duree = Int32.Parse(txtDuree.Text);
-            int puissance = Int32.Parse(txtPuissance.Text);
-
-            string sql = "INSERT INTO `periode` (`id`, `duree`, `puissance_soufflerie`, `scenario_id`) VALUES (NULL, '" + duree + "', '" + puissance + "', '1');";
-
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            MAJListePhases();
-        } */
-
-        private void btnAjouterS_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void MAJListePhases()
         {
-            string sql = "SELECT * FROM `scenario`";
+            string sql = "SELECT * FROM scenario "
+;
 
             conn.Open();
 
@@ -83,24 +66,26 @@ namespace WpfScenariosEolienne
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             listScenario.Items.Clear();
-/*
+
             if (rdr.HasRows)
             {
                 while (rdr.Read())
                 {
+                    int idPhase = Int32.Parse(rdr["id"].ToString());
                     int id = Int32.Parse(rdr["id"].ToString());
-                    int nom = Int32.Parse(rdr["nom"].ToString());
+                    var nom = string.Format(rdr["nom"].ToString());              
 
-                    listScenario.Items.Add(new ListBoxItemPhase(id, nom, this));
+                    listScenario.Items.Add(new ListBoxItemPhase(idPhase,nom, id, this));
                 }
-            }*/
-
+            }
             conn.Close();
+
+
         }
 
         public void supprimerPhase(int id)
         {
-            string sql = "DELETE FROM `periode` WHERE `id` = " + id;
+            string sql = "DELETE FROM `scenario` WHERE `id` = " + id;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -108,7 +93,7 @@ namespace WpfScenariosEolienne
             conn.Close();
 
             MAJListePhases();
-        }
+        } 
 
         private void txtPuissance_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -121,43 +106,46 @@ namespace WpfScenariosEolienne
         }
     }
 
-    /* public class ListBoxItemPhase : ListBoxItem
+     public class ListBoxItemPhase : ListBoxItem
      {
          private Creation creation;
-
          private StackPanel sp;
-         private Button btnEdit;
+         private Label txtNom;
+         private Button btnSuppr;
          private int idPhase;
 
-         public ListBoxItemPhase(int idPhase, int nom, int id, Creation creation)
+         public ListBoxItemPhase(int idPhase, int nom, int id,  Creation creation)
          {
              this.creation = creation;
              this.idPhase = idPhase;
 
-             sp = new StackPanel();
-             sp.Orientation = Orientation.Horizontal;
-             btnEdit = new Button();
-             btnEdit.Click += BtnSupprimer_Click;
+            sp = new StackPanel();
+            sp.Orientation = Orientation.Horizontal;
+            txtNom = new Label();
+            btnSuppr = new Button();
+            btnSuppr.Click += BtnSupprimer_Click;
 
 
-             btnEdit.Content = "Edit.";
+            btnSuppr.Content = "Suppr.";
 
-             sp.Children.Add(btnEdit);
+            sp.Children.Add(btnSuppr);
+            sp.Children.Add(txtNom);
 
-             this.AddChild(sp);
+
+            this.AddChild(sp);
          }
 
          private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
          {
              MessageBoxResult result = MessageBox.Show("Voulez-vous supprimer cette phase ?", "Supprimer", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
+ 
              if (result == MessageBoxResult.Yes)
              {
                  creation.supprimerPhase(idPhase);
              }
          }
+         
 
-
-     }*/
+     }
 
 }

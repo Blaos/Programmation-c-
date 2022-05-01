@@ -14,15 +14,8 @@
                 <Label Content="durée (s) : "/>
                 <TextBox x:Name="txtDuree" Width="100" Margin="20,0"/>
                 <Label Content="puissance (%) : "/>
-                <TextBox x:Name="txtPuissance" Width="100" Margin="20,0" TextChanged="txtPuissance_TextChanged"/>
+                <TextBox x:Name="txtPuissance" Width="100" Margin="20,0" />
                 <Button  x:Name="btnAjouter" Content="Ajouter" Width="100" Click="btnAjouter_Click"/>
-
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Width="782">
-                <Label  Content="Nom  : " Width="40"/>               
-                <TextBox x:Name="txtNom" Width="100" TextChanged="txtPuissance_TextChanged"/>
-                <Button  x:Name="btnAjouterS" Content="Finaliser" Width="100" Click="btnAjouter_Click" />
-
             </StackPanel>
         </StackPanel>
 

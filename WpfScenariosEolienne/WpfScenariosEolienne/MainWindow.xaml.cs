@@ -44,6 +44,7 @@ namespace WpfScenariosEolienne
             int duree = Int32.Parse(txtDuree.Text);
             int puissance = Int32.Parse(txtPuissance.Text);
 
+
             string sql = "INSERT INTO `periode` (`id`, `duree`, `puissance_soufflerie`, `scenario_id`) VALUES (NULL, '" + duree + "', '" + puissance + "', '1');";
 
             conn.Open();
@@ -54,29 +55,36 @@ namespace WpfScenariosEolienne
             MAJListePhases();
         }
 
-        private void btnAjouterS_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
 
         private void MAJListePhases()
         {
-            string sql = "SELECT * FROM `periode` WHERE `scenario_id` = 1";
+            string sql = "SELECT * FROM `periode` ";
 
             conn.Open();
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
-
-            lbPhases.Items.Clear();
             
+            lbPhases.Items.Clear();
+
+            if (rdr.HasRows)
+            {
+                while (rdr.Read())
+                {
+                    int idPhase = Int32.Parse(rdr["id"].ToString());
+                    int duree = Int32.Parse(rdr["duree"].ToString());
+                    int puissance = Int32.Parse(rdr["puissance_soufflerie"].ToString());
+
+                    lbPhases.Items.Add(new ListBoxItemPhase(idPhase, duree, puissance, this));
+                }             
+            }
 
             conn.Close();
         }
 
         public void supprimerPhase(int id)
         {
-            string sql = "DELETE FROM `periode` WHERE `id` = " + id;
+            string sql = "DELETE FROM `periode` WHERE `id` =  " + id;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -92,7 +100,7 @@ namespace WpfScenariosEolienne
 
             if (result == MessageBoxResult.Yes)
             {
-               
+
             }
         }
     }

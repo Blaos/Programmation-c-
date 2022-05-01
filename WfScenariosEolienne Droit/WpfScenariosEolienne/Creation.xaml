@@ -9,10 +9,11 @@
     <Grid>
 
         <Grid Margin="14,343,-14,51">
-            <Button   Content="Button_Creation" Width="100" Click="Button_Creation" Margin="-1,27,693,-27" />
-            <Button   Content="Button_charger" Width="100" Click="Button_Charger" Margin="108,26,584,-26" />
+            <Button   Content="charger" Width="100" Click="Button_Creation" Margin="-1,27,693,-27" />
+            <Button   Content="creation" Width="100" Click="Button_Charger" Margin="108,26,584,-26" />
         </Grid>
         <StackPanel VerticalAlignment="Center" Margin="9,4,0,21" Height="394">
+            <Label x:Name="nom" Content="Nom" Margin="224,0,499,0" />
             <Label Content="Résumé du scénario"/>
             <ListBox x:Name="listScenario" MinHeight="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="318"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20"/>
