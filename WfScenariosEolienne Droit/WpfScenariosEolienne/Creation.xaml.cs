@@ -72,10 +72,10 @@ namespace WpfScenariosEolienne
                 while (rdr.Read())
                 {
                     int idPhase = Int32.Parse(rdr["id"].ToString());
-                    int id = Int32.Parse(rdr["id"].ToString());
-                    var nom = string.Format(rdr["nom"].ToString());              
+                    string nom = rdr["nom"].ToString();
+                    string date = rdr["date_creation"].ToString();
 
-                    listScenario.Items.Add(new ListBoxItemPhase(idPhase,nom, id, this));
+                    listScenario.Items.Add(new ListBoxItemScenario(idPhase, nom, date, this));
                 }
             }
             conn.Close();
@@ -83,7 +83,7 @@ namespace WpfScenariosEolienne
 
         }
 
-        public void supprimerPhase(int id)
+        public void supprimerScenario(int id)
         {
             string sql = "DELETE FROM `scenario` WHERE `id` = " + id;
 
@@ -106,46 +106,63 @@ namespace WpfScenariosEolienne
         }
     }
 
-     public class ListBoxItemPhase : ListBoxItem
-     {
-         private Creation creation;
-         private StackPanel sp;
-         private Label txtNom;
-         private Button btnSuppr;
-         private int idPhase;
+    public class ListBoxItemScenario : ListBoxItem
+    {
+        private Creation creation;
+        private StackPanel sp;
+        private Label txtnom;
+        private Label txtdate;
+        private Button btnSuppr;
+        private Button btnEdit;
+        private int idScenario;
+        private string nomScenario;
 
-         public ListBoxItemPhase(int idPhase, int nom, int id,  Creation creation)
-         {
-             this.creation = creation;
-             this.idPhase = idPhase;
+        public ListBoxItemScenario(int idScenario, string name, string date, Creation creation)
+        {
+            this.creation = creation;
+            this.idScenario = idScenario;
+            this.nomScenario = name;
 
             sp = new StackPanel();
             sp.Orientation = Orientation.Horizontal;
-            txtNom = new Label();
+            txtnom = new Label();
+            txtdate = new Label();
             btnSuppr = new Button();
+            btnEdit = new Button();
+
             btnSuppr.Click += BtnSupprimer_Click;
+            btnEdit.Click += BtnEdit_Click;
 
-
+            txtnom.Content = name;
+            txtdate.Content = date;
             btnSuppr.Content = "Suppr.";
+            btnEdit.Content = "Edit";
 
+            sp.Children.Add(txtnom);
+            sp.Children.Add(txtdate);
             sp.Children.Add(btnSuppr);
-            sp.Children.Add(txtNom);
-
+            sp.Children.Add(btnEdit);
 
             this.AddChild(sp);
-         }
+        }
 
-         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
+        private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
          {
              MessageBoxResult result = MessageBox.Show("Voulez-vous supprimer cette phase ?", "Supprimer", MessageBoxButton.YesNo, MessageBoxImage.Question);
  
              if (result == MessageBoxResult.Yes)
              {
-                 creation.supprimerPhase(idPhase);
+                 creation.supprimerScenario(idScenario);
              }
          }
-         
 
-     }
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Periode_scenario operiode_scenario = new Periode_scenario(idScenario, nomScenario);
+            operiode_scenario.Show();
+            creation.Close();
+        }
+
+    }
 
 }

@@ -61,14 +61,16 @@ using MySql.Data.MySqlClient;
          //   DateTime date_creation = DateTime.Parse(txtDate.Text);
 
 
-            string sql = "INSERT INTO `scenario` ( nom, date_creation! ) VALUES ( '" + nom + "', Now());";
+            string sql = "INSERT INTO `scenario` ( nom, date_creation ) VALUES ( '" + nom + "', Now());";
 
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
 
-           
+            Creation creation = new Creation();
+            creation.Show();
+            this.Close();
 
         }
     }
