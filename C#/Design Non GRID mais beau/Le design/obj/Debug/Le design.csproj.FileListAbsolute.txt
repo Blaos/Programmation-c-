@@ -70,3 +70,18 @@ C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design en xaml\Le design\o
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design en xaml\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design en xaml\Le design\obj\Debug\Le design.exe
 C:\Users\curtis.bordeau\Documents\GitHub\Design\C#\Le design en xaml\Le design\obj\Debug\Le design.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\bin\Debug\Le design.exe.config
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\bin\Debug\Le design.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\bin\Debug\Le design.pdb
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.csproj.AssemblyReference.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\MainWindow.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\App.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design_MarkupCompile.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design_MarkupCompile.lref
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\MainWindow.baml
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.g.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le_design.Properties.Resources.resources
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.csproj.GenerateResource.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.csproj.CoreCompileInputs.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.exe
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design Non GRID mais beau\Le design\obj\Debug\Le design.pdb
