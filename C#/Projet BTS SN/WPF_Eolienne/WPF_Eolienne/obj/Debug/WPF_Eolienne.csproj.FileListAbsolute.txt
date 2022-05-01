@@ -1,0 +1,5 @@
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne.csproj.AssemblyReference.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\MainWindow.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\App.g.cs
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne_MarkupCompile.cache
+C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Projet BTS SN\WPF_Eolienne\WPF_Eolienne\obj\Debug\WPF_Eolienne_MarkupCompile.lref
