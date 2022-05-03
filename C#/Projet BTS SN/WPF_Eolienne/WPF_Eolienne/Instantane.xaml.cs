@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Net.Sockets;
+using System.IO;
 
 namespace WPF_Eolienne
 {
@@ -50,6 +40,13 @@ namespace WPF_Eolienne
 
         private void Btn_Creation(object sender, RoutedEventArgs e)
         {
+            Creation ocreation = new Creation();
+            ocreation.Show();
+            this.Close();
+        }
+
+        private void Btn_Charger(object sender, RoutedEventArgs e)
+        {
             Charger ocharger = new Charger();
             ocharger.Show();
             this.Close();
@@ -81,14 +78,14 @@ namespace WPF_Eolienne
         {
             EnvoiTcpClient();
             // l'évènement est l'appel de la  fonction EnvoiTcpClient 
-            /*   try
+              try
                // Le try il essait de faire ce qui est demandé sinon il va dans le catch
                {
-                   StreamReader oSR = new StreamReader("Données.jb");
-                   // @ evite de écrire le /
-                   CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
-                   Vent.Content = oCapteurAcquisition.force_vent;
-                   Puissance.Content = oCapteurAcquisition.puissance;
+                StreamReader oSR = new StreamReader("Données.jb");
+                // @ evite de écrire le /
+                CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
+                Vent.Content = oCapteurAcquisition.force_vent;
+                Puissance.Content = oCapteurAcquisition.puissance;
                    oSR.Close();
                }
 
@@ -96,7 +93,7 @@ namespace WPF_Eolienne
                // Si n'a pas réussit un message apparaitra pour signaler l'errreur
                {
                    MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
-               } */
+               } 
         }
 
         public void EnvoiTcpClient()

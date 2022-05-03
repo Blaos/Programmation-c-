@@ -168,7 +168,7 @@
                         Grid.Column="6"
                         Grid.ColumnSpan="2" 
                         VerticalAlignment="Bottom"
-                        Height="35">
+                        Height="35" Click="Btn_Charger">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -629,8 +629,7 @@
                 <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
             </TextBox>
 
-            <TextBlock 
-                       Foreground="AliceBlue" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <TextBlock Foreground="AliceBlue" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
                <Run Text="%"/><Run Text=" "/></TextBlock>
 
             <Image 
@@ -845,7 +844,7 @@
                         Click="Button_Arret"
                         Foreground="White"
                         FontSize="12"
-                        FontWeight="Medium"  Grid.Column="25" Grid.ColumnSpan="10"  Background="#FF383535" >
+                        FontWeight="Medium"  Grid.Column="25" Grid.ColumnSpan="10"  Background="#FFD01D1D" >
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>

@@ -1,7 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
 namespace WPF_Eolienne
@@ -9,26 +19,32 @@ namespace WPF_Eolienne
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class Charger : Window
+    public partial class Periode_Scenario : Window
     {
         private MySqlConnection conn;
+        private int idScenario;
+        private string nomScenario;
 
-        public Charger()
+        public Periode_Scenario (int iIdScenario, string sNomScenario)
         {
+            idScenario = iIdScenario;
+            nomScenario = sNomScenario;
+
             InitializeComponent();
 
             string myConnectionString = "server=127.0.0.1;"
 
-                                              + "uid=eolienneuser;"
+                                              + "uid=admineolienne;"
                                               + "pwd=Nantes44;"
                                               + "database=eoliennedb;"
                                               + "Charset=latin1;";
 
             conn = new MySqlConnection(myConnectionString);
 
-            MAJListePhases();
-        }
+            SetNomScenario();
 
+            SetListePeriode();
+        }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) // je fais une conditions : si le clique au dessus et que je reste enfoncé la fenetre bouge avec le curseur
@@ -87,114 +103,123 @@ namespace WPF_Eolienne
             this.WindowState = WindowState.Minimized; // On agrandi la fenetre
         }
 
-
-        private void MAJListePhases()
+        private void SetNomScenario()
         {
-            string sql = "SELECT * FROM scenario "
-;
+            txtNomScenario.Text = nomScenario;
+        }
+
+
+
+        private void SetListePeriode()
+        {
+            string sql = $"SELECT * FROM  periode where scenario_id = {idScenario}";
 
             conn.Open();
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            listScenario.Items.Clear();
+            listPeriodes.Items.Clear();
 
             if (rdr.HasRows)
             {
                 while (rdr.Read())
                 {
-                    int idPhase = Int32.Parse(rdr["id"].ToString());
-                    string nom = rdr["nom"].ToString();
-                    string date = rdr["date_creation"].ToString();
+                    int idPeriode = Int32.Parse(rdr["id"].ToString());
+                    string duree = rdr["duree"].ToString();
+                    string puissance = rdr["puissance_soufflerie"].ToString();
 
-                    listScenario.Items.Add(new ListBoxItemScenario(idPhase, nom, date, this));
+                    listPeriodes.Items.Add(new ListBoxItemPeriode(idPeriode, duree, puissance, this));
                 }
             }
             conn.Close();
-
         }
 
-        public void supprimerScenario(int id)
+        public void supprimerPeriode(int id)
         {
-            string sql = "DELETE FROM `scenario` WHERE `id` = " + id;
+            string sql = $"DELETE FROM periode WHERE id = {id}";
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            MAJListePhases();
+            SetListePeriode();
+
         }
 
-        private void txtPuissance_TextChanged(object sender, TextChangedEventArgs e)
+        private void BtnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Voulez-vous finaliser votre résultat ?", "Confirmer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            int duree = Int32.Parse(txtDuree.Text);
+            int puissance = Int32.Parse(txtPuissance.Text);
 
-            if (result == MessageBoxResult.Yes)
-            {
 
-            }
+            string sql = $"INSERT INTO periode (duree, puissance_soufflerie, scenario_id) VALUES ({duree}, {puissance}, {idScenario})";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            SetListePeriode();
+        }
+
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+            nomScenario = txtNomScenario.Text;
+            string sql = $"UPDATE scenario SET nom = '{nomScenario}' WHERE id = {idScenario}";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            SetNomScenario();
         }
     }
 
-    public class ListBoxItemScenario : ListBoxItem
+    public class ListBoxItemPeriode : ListBoxItem
     {
-        private Charger charger;
+        private Periode_Scenario PeriodeScenario;
         private StackPanel sp;
-        private Label txtnom;
-        private Label txtdate;
+        private Label txtDuree;
+        private Label txtPuissance;
         private Button btnSuppr;
-        private Button btnEdit;
-        private int idScenario;
-        private string nomScenario;
+        private int idPeriode;
 
-        public ListBoxItemScenario(int idScenario, string name, string date, Charger charger)
+        public ListBoxItemPeriode(int idPeriode, string duree, string puissance, Periode_Scenario PeriodeScenario)
         {
-            this.charger = charger;
-            this.idScenario = idScenario;
-            this.nomScenario = name;
+            this.PeriodeScenario = PeriodeScenario;
+            this.idPeriode = idPeriode;
 
             sp = new StackPanel();
             sp.Orientation = Orientation.Horizontal;
-            txtnom = new Label();
-            txtdate = new Label();
+            txtDuree = new Label();
+            txtPuissance = new Label();
             btnSuppr = new Button();
-            btnEdit = new Button();
 
             btnSuppr.Click += BtnSupprimer_Click;
-            btnEdit.Click += BtnEdit_Click;
 
-            txtnom.Content = name;
-            txtdate.Content = date;
+
+            txtDuree.Content = duree.ToString() + " secondes";
+            txtPuissance.Content = puissance.ToString() + "%";
             btnSuppr.Content = "Suppr.";
-            btnEdit.Content = "Edit";
 
-            sp.Children.Add(txtnom);
-            sp.Children.Add(txtdate);
+            sp.Children.Add(txtDuree);
+            sp.Children.Add(txtPuissance);
             sp.Children.Add(btnSuppr);
-            sp.Children.Add(btnEdit);
 
             this.AddChild(sp);
         }
 
         private void BtnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Voulez-vous supprimer cette phase ?", "Supprimer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Voulez-vous supprimer cette période ?", "Supprimer", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
-                charger.supprimerScenario(idScenario);
+                PeriodeScenario.supprimerPeriode(idPeriode);
             }
         }
-
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            Periode_Scenario operiode_scenario = new Periode_Scenario(idScenario, nomScenario);
-            operiode_scenario.Show();
-            charger.Close();
-        }
-
     }
-
 }

@@ -168,7 +168,7 @@
                         Grid.Column="6"
                         Grid.ColumnSpan="2" 
                         VerticalAlignment="Bottom"
-                        Height="35">
+                        Height="35" Click="Btn_Charger">
                 <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
 
                 <Button.Style>
@@ -373,7 +373,7 @@
 
         <StackPanel VerticalAlignment="Top" Height="348" Margin="0,62,0,39.6">
             <Label VerticalAlignment="Top" Content="Résumé du scénario" Foreground="White"/>
-            <ListBox Background="#0B2546" x:Name="listScenario" MinHeight="200" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Height="318"/>
+            <ListBox Background="#0B2546" x:Name="listScenario" MinHeight="200" HorizontalAlignment="Stretch"  VerticalAlignment="Top" Height="318" Foreground="White"/>
 
         </StackPanel>
     </Grid>
