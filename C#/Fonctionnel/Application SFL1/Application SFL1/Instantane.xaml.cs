@@ -71,13 +71,9 @@ namespace Application_SFL1
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
-
+           
         }
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
+     
     }
 
 }
