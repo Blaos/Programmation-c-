@@ -1,0 +1,16 @@
+E:\C#\SFL 1\Application SFL1\Application SFL1\bin\Release\Application SFL1.exe.config
+E:\C#\SFL 1\Application SFL1\Application SFL1\bin\Release\Application SFL1.exe
+E:\C#\SFL 1\Application SFL1\Application SFL1\bin\Release\Application SFL1.pdb
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\MainWindow.g.cs
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Instantané.g.cs
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\App.g.cs
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1_MarkupCompile.cache
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1_MarkupCompile.lref
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\MainWindow.baml
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Instantané.baml
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1.g.resources
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application_SFL1.Properties.Resources.resources
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1.csproj.GenerateResource.cache
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1.csproj.CoreCompileInputs.cache
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1.exe
+E:\C#\SFL 1\Application SFL1\Application SFL1\obj\Release\Application SFL1.pdb
