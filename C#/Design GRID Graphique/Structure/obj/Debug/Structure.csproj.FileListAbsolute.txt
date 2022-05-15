@@ -1,5 +1,0 @@
-C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design GRID Graphique\Structure\obj\Debug\Structure.csproj.AssemblyReference.cache
-C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design GRID Graphique\Structure\obj\Debug\MainWindow.g.cs
-C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design GRID Graphique\Structure\obj\Debug\App.g.cs
-C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design GRID Graphique\Structure\obj\Debug\Structure_MarkupCompile.cache
-C:\Users\Bordeau\OneDrive\Documents\GitHub\Design\C#\Design GRID Graphique\Structure\obj\Debug\Structure_MarkupCompile.lref
