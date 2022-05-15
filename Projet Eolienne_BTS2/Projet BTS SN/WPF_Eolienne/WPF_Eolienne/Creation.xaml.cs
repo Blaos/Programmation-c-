@@ -16,7 +16,8 @@ namespace WPF_Eolienne
         public Creation()
         {
             InitializeComponent();
-
+            try
+            { 
 
             string myConnectionString = "server=127.0.0.1;"
 
@@ -26,6 +27,11 @@ namespace WPF_Eolienne
                                               + "Charset=latin1;";
 
             conn = new MySqlConnection(myConnectionString);
+            }
+            catch
+            {
+                MessageBox.Show("La connexion à la base de données n'a pu être établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)

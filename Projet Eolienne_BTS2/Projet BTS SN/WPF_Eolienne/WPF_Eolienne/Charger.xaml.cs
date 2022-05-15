@@ -16,7 +16,8 @@ namespace WPF_Eolienne
         public Charger()
         {
             InitializeComponent();
-
+            try
+            { 
             string myConnectionString = "server=127.0.0.1;"
 
                                               + "uid=root;"
@@ -25,8 +26,15 @@ namespace WPF_Eolienne
                                               + "Charset=latin1;";
 
             conn = new MySqlConnection(myConnectionString);
-
             MAJListePhases();
+
+            }
+            catch
+            {
+                MessageBox.Show("La connexion à la base de données n'a pu être établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+            }
+
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -90,6 +98,9 @@ namespace WPF_Eolienne
 
         private void MAJListePhases()
         {
+
+            try
+            { 
             string sql = "SELECT * FROM scenario "
 ;
 
@@ -100,16 +111,21 @@ namespace WPF_Eolienne
 
             listScenario.Items.Clear();
 
-            if (rdr.HasRows)
-            {
-                while (rdr.Read())
+                if (rdr.HasRows)
                 {
-                    int idScenario = Int32.Parse(rdr["id"].ToString());
-                    string nom = rdr["nom"].ToString();
-                    string date = rdr["date_creation"].ToString();
+                    while (rdr.Read())
+                    {
+                        int idScenario = Int32.Parse(rdr["id"].ToString());
+                        string nom = rdr["nom"].ToString();
+                        string date = rdr["date_creation"].ToString();
 
-                    listScenario.Items.Add(new ListBoxItemScenario(idScenario, nom, date, this));
+                        listScenario.Items.Add(new ListBoxItemScenario(idScenario, nom, date, this));
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Problème avec la base de données : la table 'scenario' n'est pas accessible ", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             conn.Close();
 
@@ -117,14 +133,22 @@ namespace WPF_Eolienne
 
         public void supprimerScenario(int id)
         {
+            try
+            { 
             string sql = "DELETE FROM `scenario` WHERE `id` = " + id;
 
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-
             MAJListePhases();
+            }
+            catch
+            {
+                MessageBox.Show("Problème avec la base de données : le 'scenario' n'à pas pu être supprimé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+
+
         }
 
         private void txtPuissance_TextChanged(object sender, TextChangedEventArgs e)

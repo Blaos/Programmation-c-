@@ -124,6 +124,7 @@
     <Compile Include="Charger.xaml.cs">
       <DependentUpon>Charger.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Client_Scoket_Asynchrone.cs" />
     <Compile Include="Creation.xaml.cs">
       <DependentUpon>Creation.xaml</DependentUpon>
     </Compile>

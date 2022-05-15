@@ -623,7 +623,7 @@
                  Height="23"       
                  Background="#0B2546"
                  TextWrapping="Wrap"
-                 Grid.Column="1" Grid.ColumnSpan="2" Name="valeur_slider" >
+                 Grid.Column="1" Grid.ColumnSpan="2" Name="valeur_slider" TextChanged="valeur_slider_TextChanged" >
 
                 <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
             </TextBox>

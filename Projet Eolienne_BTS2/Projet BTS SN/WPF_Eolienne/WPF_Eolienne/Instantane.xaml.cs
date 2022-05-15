@@ -3,6 +3,9 @@ using System.Windows;
 using System.Windows.Input;
 using System.Net.Sockets;
 using System.IO;
+using System.Threading;
+using MySql.Data.MySqlClient.Memcached;
+using System.Net;
 
 namespace WPF_Eolienne
 {
@@ -24,19 +27,19 @@ namespace WPF_Eolienne
             }
         }
 
-        private void Btn_Accueil (object sender, RoutedEventArgs e)
+        private void Btn_Accueil(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
 
-          private void Btn_Instantane (object sender, RoutedEventArgs e)    // On regle le btn nommé button_instantané pour qui ouvre la fenetre intantané "choisit" et on ferme la fenetre actuel
-           {
-               Instantane instantane = new Instantane();
-               instantane.Show();
-               this.Close();
-           }
+        private void Btn_Instantane(object sender, RoutedEventArgs e)    // On regle le btn nommé button_instantané pour qui ouvre la fenetre intantané "choisit" et on ferme la fenetre actuel
+        {
+            Instantane instantane = new Instantane();
+            instantane.Show();
+            this.Close();
+        }
 
         private void Btn_Creation(object sender, RoutedEventArgs e)
         {
@@ -76,25 +79,27 @@ namespace WPF_Eolienne
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) // On créer un évènement lors du changement de valeur sur le slide 
         {
+     
             EnvoiTcpClient();
             // l'évènement est l'appel de la  fonction EnvoiTcpClient 
-              try
-               // Le try il essait de faire ce qui est demandé sinon il va dans le catch
-               {
+            try
+            // Le try il essait de faire ce qui est demandé sinon il va dans le catch
+            {
                 StreamReader oSR = new StreamReader("F:/No co/C#/Projet BTS SN/capteurs.Json");
                 // @ evite de écrire le /
                 CapteurAcquisition oCapteurAcquisition = CapteurAcquisition.ToDeserializeCapteurAcquisition(oSR.ReadToEnd());
                 Vent.Content = oCapteurAcquisition.force_vent;
                 Puissance.Content = oCapteurAcquisition.puissance;
                 oSR.Close();
-               }
+            }
 
-               catch
-               // Si n'a pas réussit un message apparaitra pour signaler l'errreur
-               {
-                   MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
-               } 
+            catch
+            // Si n'a pas réussit un message apparaitra pour signaler l'errreur
+            {
+                MessageBox.Show("Le fichier Json n'a pas pu être récuperé", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
         }
+
 
         public void EnvoiTcpClient()
         {
@@ -118,14 +123,18 @@ namespace WPF_Eolienne
 
             catch
             {
-                MessageBox.Show("La connection n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("La connexion n'a pas était établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
             }
         }
-           private void Button_Arret(object sender, RoutedEventArgs e)
+        private void Button_Arret(object sender, RoutedEventArgs e)
         {
             valeur_slider.Text = "0";
         }
 
+        private void valeur_slider_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }
