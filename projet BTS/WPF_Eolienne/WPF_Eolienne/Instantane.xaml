@@ -1,0 +1,982 @@
+﻿<Window x:Class="WPF_Eolienne.Instantane"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Window1" AllowsTransparency="True" WindowStyle="None"
+        Background="#0B2546" WindowStartupLocation="CenterScreen"  Height="450" Width="900">
+    <!-- Ici je défini la couleur du fond, Je donne un numéro précis sur la pannel de couleur de XAML, 
+                                   enfin d'obtenir la couleur souhaité -->
+
+
+    <Grid >
+
+
+        <Grid Background="#081527" 
+              MouseDown="Grid_MouseDown" VerticalAlignment="Top"  Height="61"  >
+            <!-- ici je défini la couleur et je met la couleur sur les deux coupage plus haut -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <!-- Je segmente les parties du cadre en plusieur morceau-->
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button     Content="Accueil"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom" Height="35"  Click="Btn_Accueil">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                CornerRadius="0" 
+                                VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}" Height="45" >
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!--   Ici on va définir plusieurs chose pour le boutton dans la colonne 1 : 
+                                                         - nom // - la couleur de l'écriture // -le numéro de la collone // - le postionnement de l'écriture.
+                                                         - Un peu plus complexe on définit un style d'écriture apporté par mes soin j'ai créer un dossier Fonts, 
+                                                           où j'ai insérer un fichier qui contient style d'écriture défini par google trouvé sur internet ( ce fichier se nomme Dosis,style Dosis...)
+                                                         - Le poid de l'écriture = la taille de l'écriture -->
+
+
+            <Button     Content="Instantané"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="2" Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom" Height="35"
+                        Click="Btn_Instantane">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                CornerRadius="0" 
+                                VerticalAlignment="Center"
+                                Background="{TemplateBinding Background}" Height="45" >
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button     Content="Créer"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="4"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom" Height="35" Click="Btn_Creation">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="auto" Height="auto"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button     Content="Charger"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        Grid.Column="6"
+                        Grid.ColumnSpan="2" 
+                        VerticalAlignment="Bottom"
+                        Height="35" Click="Btn_Charger">
+                <!-- J'ai insérer un bouton dans les colonnes, et je choisi que le boutons soit sur la 12 cases et que il va sur deux casse-->
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#00A3FF"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="auto" Height="auto"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!-- Le même chose qu'au dessus, sauf que je défini la deuxiéme colonne  4:57  -->
+
+
+
+            <Button     Content=" _ "
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Grid.Column="15" 
+                        VerticalAlignment="Center" HorizontalAlignment="Right" Click="Btn_Reduire">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Wheat"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="15"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button Content="□"
+                Foreground="White"
+                FontSize="16"
+                FontWeight="Medium"
+                Grid.Column="16"  VerticalAlignment="Center"  Click="Btn_Agrandir">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Wheat"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" Height="15"
+                            CornerRadius="0"
+                            Background="{TemplateBinding Background}">
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button Content="X"
+                        Foreground="White"
+                        FontSize="12"
+                        FontWeight="Medium"
+                        Grid.Column="18" 
+                        VerticalAlignment="Center"  
+                        HorizontalAlignment="Left" Click="Btn_Close">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="#081527"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="15"
+                                    CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                            <!-- ConerRadius, va permettre de faire le remplissage du cercle (btn) plus le chiffre est bas, plus le cercle sera remplit, et inversement... -->
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+        </Grid>
+
+
+        <Grid   MaxHeight="70" VerticalAlignment="Top" Height="62" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid   MaxHeight="70" Margin="0,62,0,0" VerticalAlignment="Top" Height="62" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <Grid   MaxHeight="70" Margin="0,103,0,0" VerticalAlignment="Top" Height="62">
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="11">
+                <Image Width="60" Height="47"
+                       Source="Images/éolienne.png"
+                           RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,14.4"/>
+                <TextBlock  Text="Éolienne" 
+                           Foreground="White"
+                           FontSize="25"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,16,0,16.4" Width="103" />
+                <!-- Dans le StackPanel j'introduis une "image",BitmapScalingMode c'est la résolution de l'image, plusieur option possible hight résolution = baisse perf -->
+                <!-- Dans le Stack Panel je vais écrire avec des paramètres de style sur l'écriture -->
+            </StackPanel>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+
+        <Grid   MaxHeight="70" Margin="0,153,0,0" VerticalAlignment="Top" Height="53">
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="15">
+                <TextBlock  Text="Mode instantané :" 
+                           Foreground="White"
+                           FontSize="25"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,16,0,16.4" Width="220" />
+                <!-- Dans le StackPanel j'introduis une "image",BitmapScalingMode c'est la résolution de l'image, plusieur option possible hight résolution = baisse perf -->
+                <!-- Dans le Stack Panel je vais écrire avec des paramètres de style sur l'écriture -->
+
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,199,0,0" VerticalAlignment="Top" Height="36">
+            <TextBlock Text="Le mode instantané, permet de commander la soufflerie en direct." 
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="10,5,0,0" Grid.Column="1" Grid.ColumnSpan="15"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+
+        <Grid  MaxHeight="70" Margin="0,316,0,0" VerticalAlignment="Top" Height="32">
+            <TextBox Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+                 TextAlignment="Left"
+                 Foreground="White"
+                 Height="23"       
+                 Background="#0B2546"
+                 TextWrapping="Wrap"
+                 Grid.Column="1" Grid.ColumnSpan="2" Name="valeur_slider" TextChanged="valeur_slider_TextChanged" >
+
+                <!--Text alignement permet de choisir où le texte va s'afficher (s'aligner et Binding permet de prendre l'information du slider mon slider qui ce nomme slValue), grâce à la bibliothèque System.Windows.Data ...-->
+            </TextBox>
+
+            <TextBlock Foreground="AliceBlue" Grid.Column="3" Grid.ColumnSpan="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+               <Run Text="%"/><Run Text=" "/></TextBlock>
+
+            <Image 
+                       Source="Images/Power.png"
+                           RenderOptions.BitmapScalingMode="Fant"
+                   Grid.Column="25" Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="Puissance :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Grid.Column="27" Grid.ColumnSpan="7" VerticalAlignment="Center"/>
+
+             <Label Name="Puissance" Foreground="White"  Grid.Column="35" Grid.ColumnSpan="5"  Height="25"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid   MaxHeight="70" Margin="0,276,0,0" VerticalAlignment="Top" Height="40">
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="20">
+                <TextBlock Text="Veuillez indiquer la puissance de la soufflerie :"  Foreground="White"  FontWeight="Medium"
+                       FontFamily="Fonts/#Dosis"
+                       TextWrapping="Wrap"
+                       FontSize="18"
+                       TextDecorations="Underline" VerticalAlignment="Center" HorizontalAlignment="Left"  />
+            </StackPanel>
+
+            <Image Grid.Column="25" Grid.ColumnSpan="2"
+                       Source="Images/Wind.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+            <TextBlock Text="Force du vent :" 
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis"
+                               VerticalAlignment="Center" Grid.Column="27" Grid.ColumnSpan="7"/>
+
+            <Label Name="Vent" Foreground="White"  Grid.Column="35" Grid.ColumnSpan="5"  Height="25"/>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,353,0,0" VerticalAlignment="Top" Height="31">
+            <Slider Name="slValue"
+                    Height="26" 
+                    RenderTransformOrigin="0.5,0.5" 
+                    ValueChanged="Slider_ValueChanged"
+                    TickPlacement="BottomRight" TickFrequency="5" IsSnapToTickEnabled="True"
+                    Maximum="100" Grid.Column="1" Grid.ColumnSpan="20">
+
+                <!-- Le maximun est le maximun où la barre peut avoir comme paramètre // Le TickPlacement c'est le placement de petit tiré // le tickFrequency c'est la fréquence de tiré // IsSnapToTickEnabled permet de bloquer au frequence défini-->
+            </Slider>
+            <Image Source="Images/Urgence.png" Height="30" Width="40"  Grid.Column="34" Grid.ColumnSpan="4"/>
+
+            <TextBlock Text="Arrêt d'urgence :"  Foreground="White"  FontWeight="Medium"
+                FontFamily="Fonts/#Dosis"
+                TextWrapping="Wrap"
+                FontSize="18" Grid.Column="38" Grid.ColumnSpan="8" VerticalAlignment="Center" TextDecorations="Underline"/>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+        <Grid   MaxHeight="70" Margin="0,392,0,0" VerticalAlignment="Top" Height="48">
+          <Button     Content="Arrêter"
+                        Click="Button_Arret"
+                        Foreground="White"
+                        FontSize="20"
+                        FontWeight="Medium"  Grid.Column="36" Grid.ColumnSpan="10"  Background="#FFD01D1D" >
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                        <Setter Property="Background" Value="Red"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="180" Height="40"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <!-- Le style de boutons rond -->
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+           
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <Grid Background="#0B2546"  MaxHeight="70" Margin="0,444,0,-0.4" VerticalAlignment="Top" Height="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+    </Grid>
+
+
+</Window>
