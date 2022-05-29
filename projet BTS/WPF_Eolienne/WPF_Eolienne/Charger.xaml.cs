@@ -23,14 +23,6 @@ namespace WPF_Eolienne
             try
             {
                 oclient.Connect("127.0.0.1", 53); // Connexion 
-            }
-            catch
-            {
-                MessageBox.Show("La connexion au module de commande n'a pu être établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-
-            try
-            {
                 string myConnectionString = "server=127.0.0.1;"
 
                                                   + "uid=root;"
@@ -40,10 +32,10 @@ namespace WPF_Eolienne
 
                 conn = new MySqlConnection(myConnectionString);
                 MAJListePhases();
-            }
+            }           
             catch
             {
-                MessageBox.Show("La connexion à la base de données n'a pu être établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("La connexion n'a pu être établie", string.Empty, MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -209,15 +201,18 @@ namespace WPF_Eolienne
 
                     await ClientCommande(puissance, duree);
                 }
+                MessageBoxResult result = MessageBox.Show("Votre scénario est fini! Veuillez consulter le site web pour avoir les résultats", "Lancer", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
             conn.Close();          
 
         }
 
         public void closeConnexion() // méthode qui ferme la connexion Tcp Socket
-        {            
-            stream.Close();
+        {        
+            stream.Close(); // faire un if si est pas connecté 
             oclient.Close();
+            
         }
 
         private void listScenario_SelectionChanged(object sender, SelectionChangedEventArgs e)

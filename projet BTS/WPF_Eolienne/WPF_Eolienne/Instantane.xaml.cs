@@ -14,9 +14,13 @@ namespace WPF_Eolienne
         public double forceVent;
         public double puissance;
 
+        TcpClient oclient = new TcpClient(); // permet de l'avoir pour tous le client qui envoie
+        NetworkStream stream;
+
         public Instantane()
         {
             InitializeComponent();
+            oclient.Connect("127.0.0.1", 53); // Connexion 
 
             forceVent = 0;
             puissance = 0;
@@ -28,20 +32,12 @@ namespace WPF_Eolienne
             string message = slValue.Value.ToString(); // message contiendra l'information du TextBox et en plus on choisi seulement d'envoyer le texte contenu dans le text box grâce au ".text", sans ce dernier on envoie tout le contenu du text box.
             // Création de l'objet client
             try
-            {
-                TcpClient oclient = new TcpClient();
-                oclient.Connect("10.16.2.175", 53); // Connexion NE PAS OUBLIER DE GERER LES ERREURS
+            {   Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
 
-                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message); // conversion en ASCII
-
-                NetworkStream stream = oclient.GetStream();
-
+                stream = oclient.GetStream();
                 stream.Write(data, 0, data.Length);
 
-                stream.Close();
-                oclient.Close();
-
-                await ClientAcquisition("10.16.2.175", "L'application est connecte");
+                await ClientAcquisition("127.0.0.1", "L'application est connecte");
 
                 Vent.Content = "force du vent: " + forceVent;
                 Puissance.Content = "puissance: " + puissance;
@@ -119,8 +115,16 @@ namespace WPF_Eolienne
             }
         }
 
+
+        private void Close_Connexion()
+        {
+            stream.Close();
+            oclient.Close();
+        }
+
         private void Btn_Accueil(object sender, RoutedEventArgs e)
         {
+            Close_Connexion();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
@@ -128,6 +132,7 @@ namespace WPF_Eolienne
 
         private void Btn_Instantane(object sender, RoutedEventArgs e)    // On regle le btn nommé button_instantané pour qui ouvre la fenetre intantané "choisit" et on ferme la fenetre actuel
         {
+            Close_Connexion();
             Instantane instantane = new Instantane();
             instantane.Show();
             this.Close();
@@ -135,6 +140,7 @@ namespace WPF_Eolienne
 
         private void Btn_Creation(object sender, RoutedEventArgs e)
         {
+            Close_Connexion();
             Creation ocreation = new Creation();
             ocreation.Show();
             this.Close();
@@ -142,6 +148,7 @@ namespace WPF_Eolienne
 
         private void Btn_Charger(object sender, RoutedEventArgs e)
         {
+            Close_Connexion();
             Charger ocharger = new Charger();
             ocharger.Show();
             this.Close();
