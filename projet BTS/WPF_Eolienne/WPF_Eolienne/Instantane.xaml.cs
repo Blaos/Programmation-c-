@@ -37,10 +37,12 @@ namespace WPF_Eolienne
                 stream = oclient.GetStream();
                 stream.Write(data, 0, data.Length);
 
-                await ClientAcquisition("127.0.0.1", "L'application est connecte");
 
                 Vent.Content = "force du vent: " + forceVent;
                 Puissance.Content = "puissance: " + puissance;
+
+                await ClientAcquisition("127.0.0.1", "L'application est connecte");
+
             }
 
             catch
